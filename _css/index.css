@@ -1,0 +1,21 @@
+@charset "utf-8";
+body {
+    background-color: orange;
+    color: bisque;
+}
+
+header#cabecalho {
+    text-align: center;
+    text-decoration-color: white
+}
+
+#imgHeader {
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    padding-left: 5%;
+}
+
+.list-group {
+    padding-right: 80%;
+}
