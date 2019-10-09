@@ -16,6 +16,6 @@ header#cabecalho {
     padding-left: 5%;
 }
 
-.list-group {
-    padding-right: 80%;
+form {
+    margin-block: initial;
 }
