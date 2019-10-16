@@ -50,19 +50,19 @@
                         <!-- Text input-->
                         <div class="form-group">
                             <label class=" control-label" for="inputName">Nome <h11>*</h11></label>
-                            <input id="inputName" name="inputName" placeholder="Nome Completo" class="form-control" required="" type="text">
+                            <input id="inputName" name="inputName" placeholder="Nome Completo" class="form-control" required type="text">
                         </div>
 
                         <!-- Text input-->
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label class=" control-label" for="inputCpf">CPF <h11>*</h11></label>
-                                <input id="inputCpf" name="inputCpf" placeholder="Apenas números" class="form-control" required="" type="number" maxlength="11" pattern="[0-9]+$">
+                                <input id="inputCpf" name="inputCpf" placeholder="Apenas números" class="form-control" required type="number" maxlength="11" pattern="[0-9]+$">
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label class=" control-label" for="inputDtNasc">Nascimento<h11>*</h11></label>
-                                <input id="inputDtNasc" name="inputDtNasc" placeholder="DD/MM/AAAA" class="form-control" required="" type="date" maxlength="10" OnKeyPress="formatar('##/##/####', this)">
+                                <input id="inputDtNasc" name="inputDtNasc" placeholder="DD/MM/AAAA" class="form-control" required type="date" maxlength="10">
                             </div>
 
                         </div>
@@ -78,7 +78,7 @@
                             <div class="form-group col-md-6">
                                 <label class="control-label" for="inputTel2">Telefone <h11>*</h11></label>
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                                <input id="inputTel2" name="inputTel2" class="form-control" placeholder="XX XXXXX-XXXX" required="" type="number" maxlength="13" pattern="\[0-9]{2}\ [0-9]{4,6}-[0-9]{3,4}$">
+                                <input id="inputTel2" name="inputTel2" class="form-control" placeholder="XX XXXXX-XXXX" required type="number" maxlength="13" pattern="\[0-9]{2}\ [0-9]{4,6}-[0-9]{3,4}$">
                             </div>
                         </div>
                     </div>
@@ -88,7 +88,7 @@
                         <div class="form-group">
                             <label class="control-label" for="inputEmail">Email <h11>*</h11></label>
                             <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                            <input id="inputEmail" name="inputEmail" class="form-control" placeholder="email@email.com" required="" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                            <input id="inputEmail" name="inputEmail" class="form-control" placeholder="email@email.com" required type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
                         </div>
                     </div>
 
@@ -96,14 +96,14 @@
                     <!-- Search input-->
                     <div class="form-group">
                         <label class="control-label" for="inputCep">CEP <h11>*</h11></label>
-                        <input id="inputCep" name="inputCep" placeholder="Apenas números" class="form-control input-md" required="" value="" type="number" maxlength="8" pattern="[0-9]+$">
+                        <input id="inputCep" name="inputCep" placeholder="Apenas números" class="form-control input-md" required value="" type="number" maxlength="8" pattern="[0-9]+$">
                     </div>
 
                     <div class="form-group">
                         <div class="form-group">
                             <div class="control-label">
                                 <span class="input-group-addon" for="inputRua">Rua</span>
-                                <input id="inputRua" name="inputRua" class="form-control" placeholder="" required="" readonly="readonly" type="text">
+                                <input id="inputRua" name="inputRua" class="form-control" placeholder="" required type="text">
                             </div>
                         </div>
                     </div>
@@ -112,26 +112,26 @@
                         <div class="form-group col-md-6">
                             <label class="control-label" for="inputCidade">Nº <h11>*</h11></label>
                             <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                            <input id="inputNum" name="inputNum" class="form-control" maxlength="10" placeholder="" required="" type="text">
+                            <input id="inputNum" name="inputNum" class="form-control" maxlength="10" placeholders required type="text">
                         </div>
 
                         <div class="form-group col-md-6">
                             <label class="control-label" for="inputCidade">Bairro</label>
                             <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                            <input id="inputBairro" name="inputBairro" class="form-control" placeholder="" required="" type="text">
+                            <input id="inputBairro" name="inputBairro" class="form-control" placeholder="" required type="text">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label class="control-label" for="inputCidade">Cidade</label>
                             <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                            <input id="inputCidade" name="inputCidade" class="form-control" placeholder="" required="" type="text">
+                            <input id="inputCidade" name="inputCidade" class="form-control" placeholder="" required type="text">
                         </div>
 
                         <div class="form-group col-md-6">
                             <label class="control-label" for="inputEstado">Estado</label>
                             <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                            <input id="inputEstado" name="inputEstado" class="form-control" placeholder="" required="" type="text">
+                            <input id="inputEstado" name="inputEstado" class="form-control" placeholder="" required type="text">
                         </div>
                     </div>
 
@@ -153,21 +153,27 @@
 
     <div class="jumbotron">
         <table class="table table-striped" id="tbCadastro">
-            <th>
-                <th>Nome:</th>
-                <th>CPF:</th>
-                <th>Data Nascimento:</th>
-                <th>Telefone 1:</th>
-                <th>Telefone 2:</th>
-                <th>Email:</th>
-                <th>Cep:</th>
-                <th>Rua:</th>
-                <th>N°:</th>
-                <th>Bairro:</th>
-                <th>Cidade:</th>
-                <th>Estado:</th>
-            </th>
+            <thead>
+                <tr>
+                    <th>Nome:</th>
+                    <th>CPF:</th>
+                    <th>Data Nascimento:</th>
+                    <th>Telefone 1:</th>
+                    <th>Telefone 2:</th>
+                    <th>Email:</th>
+                    <th>Cep:</th>
+                    <th>Rua:</th>
+                    <th>N°:</th>
+                    <th>Bairro:</th>
+                    <th>Cidade:</th>
+                    <th>Estado:</th>
+                    <th id="btnInput"></th>
+                </tr>
+            </thead>
+            <tbody id="tabCliente">
 
+
+            </tbody>
 
         </table>
     </div>

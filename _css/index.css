@@ -19,3 +19,7 @@ header#cabecalho {
 form {
     margin-block: initial;
 }
+
+#tbCadastro {
+    width: 100%;
+}

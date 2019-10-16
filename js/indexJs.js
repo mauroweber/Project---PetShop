@@ -1,30 +1,35 @@
-var btnCadastrar = document.querySelector("#btnCadastrar");
+let btnCadastrar = document.querySelector("#btnCadastrar");
 let tableCliente = document.querySelector("#tabelaCliente");
-let form;
-let cliente = {};
 
-let trCliente = document.createElement("tr");
-let tdNome = document.createElement("td");
-let tdCidade = document.createElement("td");
-let tdTel1 = document.createElement("td");
-let tdTel2 = document.createElement("td");
-let tdCpf = document.createElement("td");
-let tdEmail = document.createElement("td");
-let tdDtNasci = document.createElement("td");
-let tdCep = document.createElement("td");
-let tdBairro = document.createElement("td");
-let tdRua = document.createElement("td");
-let tdNum = document.createElement("td");
-let tdEstado = document.createElement("td");
+
+
 
 
 
 btnCadastrar.addEventListener('click', (event) => {
-    event.preventDefault();
-    form = document.querySelector("#formInput");
-    cliente = capitarFomr(form);
+
+    let form = document.querySelector("#formInput");
+    let cliente = capitarFomr(form);
+
 
     let tbCadastro = document.querySelector("#tbCadastro")
+
+
+    let trCliente = document.createElement("tr");
+    let tdNome = document.createElement("td");
+    let tdCidade = document.createElement("td");
+    let tdTel1 = document.createElement("td");
+    let tdTel2 = document.createElement("td");
+    let tdCpf = document.createElement("td");
+    let tdEmail = document.createElement("td");
+    let tdDtNasci = document.createElement("td");
+    let tdCep = document.createElement("td");
+    let tdBairro = document.createElement("td");
+    let tdRua = document.createElement("td");
+    let tdNum = document.createElement("td");
+    let tdEstado = document.createElement("td");
+    let tdInput = document.createElement("td");
+
     tdNome.innerHTML = cliente.nome;
     tdCidade.innerHTML = cliente.cidade;
     tdTel1.innerHTML = cliente.tel1;
@@ -37,9 +42,11 @@ btnCadastrar.addEventListener('click', (event) => {
     tdRua.innerHTML = cliente.rua;
     tdNum.innerHTML = cliente.num;
     tdEstado.innerHTML = cliente.estado;
+    tdInput.innerHTML = "<button type='submit' class='btnInput'>Deletar</button>"
 
 
-    trCliente.className = "cliente"
+    trCliente.className = "table table-stripediente"
+
     tdNome.className = "nome"
     tdCpf.className = "cpf"
     tdDtNasci.className = "dtNasci"
@@ -65,13 +72,14 @@ btnCadastrar.addEventListener('click', (event) => {
     trCliente.appendChild(tdBairro)
     trCliente.appendChild(tdCidade)
     trCliente.appendChild(tdEstado)
+    trCliente.appendChild(tdInput)
     tbCadastro.querySelector("tbody").appendChild(trCliente)
 
-
+    limparFormulario();
 });
 
 function capitarFomr(form) {
-    debugger
+
     cliente = {
         nome: form.inputName.value,
         cpf: form.inputCpf.value,
@@ -96,7 +104,6 @@ function limparFormulario() {
     document.getElementById('nome').value = "";
     document.getElementById('cidade').value = "";
     document.getElementById('telefone').value = "";
-
     document.querySelector('nome').value = "";
     document.querySelector('cpf').value = "";
     document.querySelector('dtNasci').value = "";
@@ -122,3 +129,15 @@ function alterar() {
 
     console.log("choegou " + inputTest)
 };
+
+//apaga linha
+
+let removerCliente = document.querySelector("#tabCliente")
+
+removerCliente.addEventListener("click", (event) => {
+
+    if (event.target.className == "btnInput") {
+        event.target.parentNode.parentNode.remove()
+    }
+
+})
