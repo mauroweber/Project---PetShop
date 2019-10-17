@@ -14,40 +14,64 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="textoNavbar ">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="textoNavbar">
 
         <ul class="navbar-nav justify-content-center">
-            <li class="nav-item "><a class="nav-link" href="index.html ">Home</a></li>
-            <li class="nav-item "><a class="nav-link" href="cadastro.html ">Cadastrar Cliente</a></li>
-            <li class="nav-item "><a class="nav-link" href="index.html ">Cadastrar Fornecedor</a></li>
-            <li class="nav-item "><a class="nav-link" href="listClientes.html">Clientes</a></li>
-            <li class="nav-item "><a class="nav-link" href="index.html ">Fornecedor</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="cadastro.html">Cadastrar Cliente</a></li>
+            <li class="nav-item"><a class="nav-link" href="cadProduto.html">Cadastrar Produto</a></li>
+            <li class="nav-item"><a class="nav-link" href="listClientes.html">Clientes</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html">Fornecedor</a></li>
         </ul>
 
     </nav>
 
     <main>
-        <form class="cadFornecedor">
+
+        <form action="" method="POST" class="cadFornecedor">
             <div id="cabecalhoFornecedor">
+
                 <p>Dados da Empresa</p>
+                <label for="codigo">Código</label>
+                <input type="text" name="codigo" id="codigo">
                 <label for="cnpj">CNPJ </label>
                 <input type="text" name="cnpj" id="cnpj" placeholder="Digitar CNPJ somente números">
                 <label for="inscEstadual">Inscrição Estadual: </label>
                 <input type="text" name="inscEstadual" id="inscEstadual" placeholder="Digitar inscrição estadual">
-                <label for="nameCompany">Nome da Empresa: </label>
-                <input type="text" name="nameCompany" id="nameCompany" placeholder="Digitar o nome da empresa">
+                <label for="nomeEmpresa">Nome da Empresa: </label>
+                <input type="text" name="nomeEmpresa" id="nomeEmpresa" placeholder="Digitar o nome da empresa">
+                <label for="nomeFantasia">Nome Fantasia: </label>
+                <input type="text" name="nomeFantasia" id="nomeFantasia" placeholder="Digitar o nome da empresa">
+
             </div>
+
             <br>
-            <p>Endereço</p>
-            <label for="rua">Rua:</label>
-            <input type="text" name="street" id="street" placeholder="Digitar nome da rua">
-            <label for="rua">Número:</label>
-            <input type="text" name="nbBuilding" id="nbBuilding" placeholder="Ex.: 123">
-            <label for="cep">CEP.:</label>
-            <input type="text" name="cep" id="cep" placeholder="Ex.: 00000-000">
 
+            <div class="enderecoEmpresa">
 
+                <p>Endereço</p>
+                <label for="rua">Logradouro:</label>
+                <input type="text" name="street" id="street" placeholder="Digitar nome da rua">
+                <label for="rua">Número:</label>
+                <input type="text" name="numEmpresa" id="numEmpresa" placeholder="Ex.: 123">
+                <label for="rua">Complemento:</label>
+                <input type="text" name="complemento" id="complemento" placeholder="Ex.: Sala 01">
+                <label for="cep">CEP.:</label>
+                <input type="text" name="cep" id="cep" placeholder="Ex.: 00000-000">
+                <label for="bairro">Bairro:</label>
+                <input type="text" name="bairro" id="bairro" placeholder="">
+                <label for="municipio">Municipio:</label>
+                <input type="text" name="municipio" id="municipio" placeholder="">
+                <label for="uf">UF:</label>
+                <input type="text" name="uf" id="uf" placeholder="">
+                <label for="telefone">Telefone:</label>
+                <input type="text" name="telefone" id="telefone" placeholder="(00) 00000-0000">
 
+            </div>
+
+            <br>
+
+            <button class="btnFornecedor">Cadastrar Fornecedor</button>
 
         </form>
     </main>
