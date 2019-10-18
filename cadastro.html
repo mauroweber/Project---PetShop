@@ -31,6 +31,7 @@
                 <li class="nav-item "><a class="nav-link" href="index.html ">Fornecedor</a></li>
             </ul>
         </nav>
+        <h1> teste</h1>
         <br>
         <div class="row">
             <form id="formInput">
@@ -38,73 +39,70 @@
                     <h5>Cadastro Cliente</h5>
                 </div>
                 <div class="panel-body">
-                    <div class="panel-body">
-                        <div class="form-group">
-                            <div class="col-md-11 control-label">
-                                <p class="help-block">
-                                    <h11>*</h11> Campo Obrigatório
-                                </p>
-                            </div>
-                        </div>
 
-                        <!-- Text input-->
-                        <div class="form-group">
-                            <label class=" control-label" for="inputName">Nome <h11>*</h11></label>
-                            <input id="inputName" name="inputName" placeholder="Nome Completo" class="form-control" required type="text">
-                        </div>
-
-                        <!-- Text input-->
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label class=" control-label" for="inputCpf">CPF <h11>*</h11></label>
-                                <input id="inputCpf" name="inputCpf" placeholder="Apenas números" class="form-control" required type="number" maxlength="11" pattern="[0-9]+$">
-                            </div>
-
-                            <div class="form-group col-md-6">
-                                <label class=" control-label" for="inputDtNasc">Nascimento<h11>*</h11></label>
-                                <input id="inputDtNasc" name="inputDtNasc" placeholder="DD/MM/AAAA" class="form-control" required type="date" maxlength="10">
-                            </div>
-
-                        </div>
-                        <br>
-                        <!-- Prepended text-->
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label class="control-label" for="inputTel1">Telefone</label>
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                                <input id="inputTel1" name="inputTel1" class="form-control" placeholder="XX XXXXX-XXXX" type="number" maxlength="13" pattern="\[0-9]{2}\ [0-9]{4,6}-[0-9]{3,4}$" />
-                            </div>
-
-                            <div class="form-group col-md-6">
-                                <label class="control-label" for="inputTel2">Telefone <h11>*</h11></label>
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                                <input id="inputTel2" name="inputTel2" class="form-control" placeholder="XX XXXXX-XXXX" required type="number" maxlength="13" pattern="\[0-9]{2}\ [0-9]{4,6}-[0-9]{3,4}$">
-                            </div>
+                    <div class="form-group">
+                        <div class="col-md-11 control-label">
+                            <p class="help-block">
+                                <h11>*</h11> Campo Obrigatório
+                            </p>
                         </div>
                     </div>
 
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class=" control-label" for="inputName">Nome <h11>*</h11></label>
+                        <input id="inputName" name="inputName" placeholder="Nome Completo" class="form-control" required type="text" maxlength="40"  >
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label class=" control-label" for="inputCpf">CPF <h11>*</h11></label>
+                            <input id="inputCpf" name="inputCpf" placeholder="Apenas números" class="form-control" required type="text" maxlength="11">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label class=" control-label" for="inputDtNasc">Nascimento<h11>*</h11></label>
+                            <input id="inputNasc" name="inputDtNasc" placeholder="DD/MM/AAAA" class="form-control" required type="date" maxlength="10">
+                        </div>
+
+                    </div>
+                    <br>
+                    <!-- Prepended text-->
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label class="control-label" for="inputTel1">Telefone</label>
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                            <input id="inputTel1" name="inputTel1" class="form-control" placeholder="XX XXXXX-XXXX" type="text" maxlength="15" checked />
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label class="control-label" for="inputTel2">Telefone <h11>*</h11></label>
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                            <input id="inputTel2" name="inputTel2" class="form-control" placeholder="XX XXXXX-XXXX" required type="text" maxlength="15">
+                        </div>
+                    </div>
+
+
                     <!-- Prepended text-->
                     <div class="form-group">
-                        <div class="form-group">
-                            <label class="control-label" for="inputEmail">Email <h11>*</h11></label>
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                            <input id="inputEmail" name="inputEmail" class="form-control" placeholder="email@email.com" required type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
-                        </div>
+                        <label class="control-label" for="inputEmail">Email <h11>*</h11></label>
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                        <input id="inputEmail" name="inputEmail" class="form-control" placeholder="email@email.com" required type="email">
                     </div>
 
 
                     <!-- Search input-->
                     <div class="form-group">
                         <label class="control-label" for="inputCep">CEP <h11>*</h11></label>
-                        <input id="inputCep" name="inputCep" placeholder="Apenas números" class="form-control input-md" required value="" type="number" maxlength="8" pattern="[0-9]+$">
+                        <input id="inputCep" name="inputCep" placeholder="Apenas números" class="form-control input-md" required value="" type="text" maxlength="10">
                     </div>
 
                     <div class="form-group">
-                        <div class="form-group">
-                            <div class="control-label">
-                                <span class="input-group-addon" for="inputRua">Rua</span>
-                                <input id="inputRua" name="inputRua" class="form-control" placeholder="" required type="text">
-                            </div>
+                        <div class="control-label">
+                            <label class="control-label" for="inputRua">Rua <h11>*</h11></label>
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                            <input id="inputRua" name="inputRua" class="form-control" placeholder="" required type="text">
                         </div>
                     </div>
 
@@ -138,57 +136,52 @@
                     <div class="form-group">
                         <label class="col-md-2 control-label" for="Cadastrar"></label>
                         <div class="col-md-8">
-                            <button id="btnCadastrar" name="btnCadastrar" class="btn btn-success" type="Submit">Cadastrar</button>
-                            <button id="Cancelar" name="Cancelar" class="btn btn-danger" type="Reset">Cancelar</button>
+                            <input id="btnCadastrar" name="btnCadastrar" class="btn btn-success" type="Submit" placeholder="Cadastrar" requerid />
+                            <input id="Cancelar" name="Cancelar" class="btn btn-danger" type="Reset" placeholder="Cancelar" />
                         </div>
                     </div>
-
                 </div>
+            </form>
         </div>
 
-        </form>
+        <div class="jumbotron">
+            <table class="table table-striped" id="tbCadastro">
+                <thead>
+                    <tr>
+                        <th>Nome:</th>
+                        <th>CPF:</th>
+                        <th>Data Nascimento:</th>
+                        <th>Telefone 1:</th>
+                        <th>Telefone 2:</th>
+                        <th>Email:</th>
+                        <th>Cep:</th>
+                        <th>Rua:</th>
+                        <th>N°:</th>
+                        <th>Bairro:</th>
+                        <th>Cidade:</th>
+                        <th>Estado:</th>
+                        <th id="btnInput"></th>
+                    </tr>
+                </thead>
+                <tbody id="tabCliente">
 
 
+                </tbody>
+
+            </table>
+        </div>
+
+        <div class="align-content-xl-center">
+            <hr class="mb-5 " />
+            <footer id="rodape ">
+                <p class="mt-5 mb-3 text-muted text-center ">Copyright &copy; 2019 - by David Linhares / Mauro Weber / Whellington <br />
+                    <a href="http://google.com " target="_blank ">Facebook</a>
+                    <a href="http://google.com " target="_blank ">Twitter</a>
+                </p>
+            </footer>
+
+        </div>
     </div>
-
-    <div class="jumbotron">
-        <table class="table table-striped" id="tbCadastro">
-            <thead>
-                <tr>
-                    <th>Nome:</th>
-                    <th>CPF:</th>
-                    <th>Data Nascimento:</th>
-                    <th>Telefone 1:</th>
-                    <th>Telefone 2:</th>
-                    <th>Email:</th>
-                    <th>Cep:</th>
-                    <th>Rua:</th>
-                    <th>N°:</th>
-                    <th>Bairro:</th>
-                    <th>Cidade:</th>
-                    <th>Estado:</th>
-                    <th id="btnInput"></th>
-                </tr>
-            </thead>
-            <tbody id="tabCliente">
-
-
-            </tbody>
-
-        </table>
-    </div>
-
-    <div class="align-content-xl-center">
-        <hr class="mb-5 " />
-        <footer id="rodape ">
-            <p class="mt-5 mb-3 text-muted text-center ">Copyright &copy; 2019 - by David Linhares / Mauro Weber / Whellington <br />
-                <a href="http://google.com " target="_blank ">Facebook</a>
-                <a href="http://google.com " target="_blank ">Twitter</a>
-            </p>
-        </footer>
-
-    </div>
-
     <script src="js/indexJs.js" type="text/javascript"></script>
 </body>
 
