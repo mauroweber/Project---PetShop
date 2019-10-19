@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="img/dog.png">
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="_css/estiloProduto.css" />
+    <link rel="stylesheet" type="text/css" href="_css/index.css">
+    <title>Cadastro de Produto</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="textoNavbar">
+
+        <ul class="navbar-nav justify-content-center">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="cadastro.html">Cadastrar Cliente</a></li>
+            <li class="nav-item"><a class="nav-link" href="cadFornecedor.html">Cadastrar Fornecedor</a></li>
+            <li class="nav-item"><a class="nav-link" href="listClientes.html">Clientes</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html">Fornecedor</a></li>
+        </ul>
+
+    </nav>
+
+        <form action="" method="POST">
+
+            <p>CADASTRO DE PRODUTOS</p>
+
+            <label for="codigo">Código</label>
+            <input type="text" name="codigo" id="codigo">
+            <label for="nomeProduto">Descrição</label>
+            <input type="text" name="nomeProduto" id="nomeProduto" placeholder="Digitar o nome do produto">
+            <label for="apelido">Apelido</label>
+            <input type="text" name="apelido" id="apelido" placeholder="Digitar nome do produto interno">
+            <label for="codBarras">Código de Barras</label>
+            <input type="text" name="codBarras" id="codBarras" placeholder="Leitor de Código de Barras">
+            <label for="unMedida">Unidade de Media</label>
+            <input type="text" name="unMedida" id="unMedida" placeholder="Ex: m², kg, MH...">
+            <label for="vCusto">Valor de Custo</label>
+            <input type="text" name="vCusto" id="vCusto" placeholder="Valor de custo">
+            <label for="mgLucro">Margem de Lucro</label>
+            <input type="text" name="mgLucro" id="mgLucro" placeholder="Margem em percentual">
+            <label for="vVenda">Valor de Venda</label>
+            <input type="text" name="vVenda" id="vVenda">
+
+            <p>INFORMAÇÕES DE ESTOQUE</p>
+
+            <label for="qtdeMin">Mín. em estoque</label>
+            <input type="text" name="qtdeMin" id="qtdeMin" placeholder="Quantdade mínima em estoque">
+            <label for="qtdeMax">Máx. em estoque</label>
+            <input type="text" name="qtdeMax" id="qtdeMax" placeholder="Quantdade máxima em estoque">
+            <label for="grupo">Grupo</label>
+            <input type="text" name="grupo" id="grupo" placeholder="Ex: Ração, medicamentos, higiene e etc..">
+            <label for="idFabricante">Fabicante</label>
+            <input type="text" name="idFabricante" id="idFabricante" placeholder="Informar código do fornecedor">
+         
+            <button class="addProduto">Cadastrar Produto</button>
+
+    </form>
+
+</body>
+
+</html>
