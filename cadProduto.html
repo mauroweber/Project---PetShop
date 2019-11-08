@@ -1,67 +1,139 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="img/dog.png">
     <link rel="stylesheet" type="text/css" href="lib/bootstrap.css" />
+    <link rel="stylesheet " type="text/css " href="lib/bootstrap.min.css" />
+    <link rel="stylesheet " type="text/css " href="lib/bootstrap-grid.min.css " />
+    <link rel="stylesheet " type="text/css " href="_css/index.css " />
     <link rel="stylesheet" type="text/css" href="_css/estiloProduto.css" />
-    <link rel="stylesheet" type="text/css" href="_css/index.css">
+    <link rel="icon" href=" https://img.icons8.com/color/96/000000/dog.png">
+
+
     <title>Cadastro de Produto</title>
 </head>
 
 <body>
 
+    <div class="container">
+
+        <header id="cabecalho">
+                <img class="d-block mx-auto mb-0 " src="https://img.icons8.com/color/96/000000/dog.png ">
+                <h1>Pet Shop</h1>
+                <h5>Seu Pet Shop Favorito</h5>
+            </header>
+            <hr class="mb-3" />
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light" id="textoNavbar">
 
         <ul class="navbar-nav justify-content-center">
-            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="cadastro.html">Cadastrar Cliente</a></li>
-            <li class="nav-item"><a class="nav-link" href="cadFornecedor.html">Cadastrar Fornecedor</a></li>
-            <li class="nav-item"><a class="nav-link" href="listClientes.html">Clientes</a></li>
-            <li class="nav-item"><a class="nav-link" href="index.html">Fornecedor</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html"><h4>Home</h4></a></li>
+                <li class="nav-item"><a class="nav-link" href="cadClientes.html"><h4>Cadastrar Cliente</h4></a></li>
+                <li class="nav-item"><a class="nav-link" href="cadFornecedor.html"><h4>Cadastrar Fornecedor</h4></a></li>
+                <li class="nav-item"><a class="nav-link" href="cadProduto.html"><h4>Cadastrar Produto</h4></a></li>
+                <li class="nav-item"><a class="nav-link" href="listClientes.html"><h4>Clientes</h4></a></li>
+                <li class="nav-item"><a class="nav-link" href="listFornecedor.html"><h4>Fornecedor</h4></a></li>
         </ul>
-
+        
     </nav>
 
-        <form action="" method="POST">
+        <form id="formInput">
 
-            <p>CADASTRO DE PRODUTOS</p>
+            <br>
+            <h1> CADASTRO DE PRODUTOS</h1>
+            <br>
 
-            <label for="codigo">Código</label>
-            <input type="text" name="codigo" id="codigo">
-            <label for="nomeProduto">Descrição</label>
-            <input type="text" name="nomeProduto" id="nomeProduto" placeholder="Digitar o nome do produto">
-            <label for="apelido">Apelido</label>
-            <input type="text" name="apelido" id="apelido" placeholder="Digitar nome do produto interno">
-            <label for="codBarras">Código de Barras</label>
-            <input type="text" name="codBarras" id="codBarras" placeholder="Leitor de Código de Barras">
-            <label for="unMedida">Unidade de Media</label>
-            <input type="text" name="unMedida" id="unMedida" placeholder="Ex: m², kg, MH...">
-            <label for="vCusto">Valor de Custo</label>
-            <input type="text" name="vCusto" id="vCusto" placeholder="Valor de custo">
-            <label for="mgLucro">Margem de Lucro</label>
-            <input type="text" name="mgLucro" id="mgLucro" placeholder="Margem em percentual">
-            <label for="vVenda">Valor de Venda</label>
-            <input type="text" name="vVenda" id="vVenda">
+            <div class="panel-body">
 
-            <p>INFORMAÇÕES DE ESTOQUE</p>
+                <div class="form-row">   
+                 <div class="form-group col-md-6">    
+                     <label for="codigo">Código</label>
+                     <input id="codigo" name="codigo" type="text"  placeholder="Codigo" class="form-control" required value="" maxlength="40">
+             </div>
+             <div class="form-group col-md-6">
+                     <label for="descrição">Descrição</label>
+                     <input type="text" name="descrição" id="descrição" placeholder="Descrição do produto" class="form-control" required value="" maxlength="40">
+            </div>
+        </div>
 
-            <label for="qtdeMin">Mín. em estoque</label>
-            <input type="text" name="qtdeMin" id="qtdeMin" placeholder="Quantdade mínima em estoque">
-            <label for="qtdeMax">Máx. em estoque</label>
-            <input type="text" name="qtdeMax" id="qtdeMax" placeholder="Quantdade máxima em estoque">
-            <label for="grupo">Grupo</label>
-            <input type="text" name="grupo" id="grupo" placeholder="Ex: Ração, medicamentos, higiene e etc..">
-            <label for="idFabricante">Fabicante</label>
-            <input type="text" name="idFabricante" id="idFabricante" placeholder="Informar código do fornecedor">
-         
+            <div class="form-row">  
+                <div class="form-group col-md-6"> 
+                    <label for="nomeDoProduto">Nome do produto</label>
+                    <input type="text" name="nomeDoProduto" id="nomeDoProduto" placeholder="Digitar nome do produto" class="form-control" required value="" maxlength="40">
+                 </div>
+                <div class="form-group col-md-6">    
+                     <label for="codBarras">Código de Barras</label>
+                     <input type="text" name="codBarras" id="codBarras" placeholder="Leitor de Código de Barras" class="form-control" required value="" maxlength="40">
+             </div>
+        </div>
+
+             <div class="form-row">
+                <div class="form-group col-md-6"> 
+                     <label for="unMedida">Unidade de Media</label>
+                    <input type="text" name="unMedida" id="unMedida" placeholder="Ex: m², kg, MH..." class="form-control" required value="" maxlength="40">
+            </div>
+            <div class="form-group col-md-6"> 
+                     <label for="vCusto">Valor de Custo</label>
+                     <input type="text" name="vCusto" id="vCusto" placeholder="Valor de custo" class="form-control" required value="" maxlength="40">
+            </div>
+        </div>
+
+             <div class="form-row">
+                <div class="form-group col-md-6"> 
+                  <label for="mgLucro">Margem de Lucro</label>
+                  <input type="text" name="mgLucro" id="mgLucro" placeholder="Margem em percentual" class="form-control" required value="" maxlength="40">
+            </div>
+            <div class="form-group col-md-6"> 
+                 <label for="vVenda">Valor de Venda</label>
+                <input type="text" name="vVenda" id="vVenda"placeholder="Digitar valor de venda" class="form-control" required value="" maxlength="40"> 
+            </div>
+        </div>
+
+            <p><h1> INFORMAÇÕES DE ESTOQUE</h1></p>
+
+            <div class="form-row">
+                <div class="form-group col-md-6"> 
+                    <label for="qtdeMin">Mín. em estoque</label>
+                    <input type="text" name="qtdeMin" id="qtdeMin" placeholder="Quantidade mínima em estoque" class="form-control" required value="" maxlength="40">
+            </div>
+            <div class="form-group col-md-6"> 
+                    <label for="qtdeMax">Máx. em estoque</label>
+                    <input type="text" name="qtdeMax" id="qtdeMax" placeholder="Quantidade máxima em estoque" class="form-control" required value="" maxlength="40">
+            </div>
+        </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6"> 
+                     <label for="grupo">Grupo</label>
+                    <input type="text" name="grupo" id="grupo" placeholder="Ex: Ração, medicamentos, higiene e etc.." class="form-control" required value="" maxlength="40"> 
+            </div>
+            <div class="form-group col-md-6">
+                    <label for="idFabricante">Fabicante</label>
+                    <input type="text" name="idFabricante" id="idFabricante" placeholder="Informar código do fornecedor" class="form-control" required value="" maxlength="40">
+                    </div>
+            </div>
+<br>
             <button class="addProduto">Cadastrar Produto</button>
 
+        </div>
     </form>
-
+</div>
 </body>
+<div class="align-content-xl-center">
+        <hr class="mb-5 " />
+        <footer id="rodape ">
+            <p class="mt-5 mb-3 text-muted text-center ">Copyright &copy; 2019 - by David Linhares / Mauro Weber / Wellington Ferreira<br />
+                <a href="http://google.com " target="_blank ">Facebook</a>
+                <a href="http://google.com " target="_blank ">Twitter</a>
+            </p>
+        </footer>
+
+    </div>
+</div>
+<script src="js/indexJs.js" type="text/javascript"></script>
+
 
 </html>

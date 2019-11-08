@@ -9,19 +9,29 @@
     <link rel="stylesheet" type="text/css" href="lib/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="_css/estiloFornecedor.css" />
     <link rel="stylesheet" type="text/css" href="_css/index.css">
-    <title>Cadastro de Forncedor</title>
+
+    <title>Cadastro de Fornecedor</title>
 </head>
 
 <body>
+        <div class="container">
+        <header id="cabecalho">
+                <img class="d-block mx-auto mb-0 " src="https://img.icons8.com/color/96/000000/dog.png ">
+
+                <h1>Pet Shop</h1>
+                <h5>Seu Pet Shop Favorito</h5>
+            </header>
+            <hr class="mb-3" />
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light" id="textoNavbar">
 
         <ul class="navbar-nav justify-content-center">
-            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="cadastro.html">Cadastrar Cliente</a></li>
-            <li class="nav-item"><a class="nav-link" href="cadProduto.html">Cadastrar Produto</a></li>
-            <li class="nav-item"><a class="nav-link" href="listClientes.html">Clientes</a></li>
-            <li class="nav-item"><a class="nav-link" href="index.html">Fornecedor</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html"><h4>Home</h4></a></li>
+                <li class="nav-item"><a class="nav-link" href="cadClientes.html"><h4>Cadastrar Cliente</h4></a></li>
+                <li class="nav-item"><a class="nav-link" href="cadFornecedor.html"><h4>Cadastrar Fornecedor</h4></a></li>
+                <li class="nav-item"><a class="nav-link" href="cadProduto.html"><h4>Cadastrar Produto</h4></a></li>
+                <li class="nav-item"><a class="nav-link" href="listClientes.html"><h4>Clientes</h4></a></li>
+                <li class="nav-item"><a class="nav-link" href="listFornecedor.html"><h4>Fornecedor</h4></a></li>
         </ul>
 
     </nav>
@@ -31,38 +41,89 @@
         <form action="" method="POST" class="cadFornecedor">
             <div id="cabecalhoFornecedor">
 
-                <p>Dados da Empresa</p>
-                <label for="codigo">Código</label>
-                <input type="text" name="codigo" id="codigo">
-                <label for="cnpj">CNPJ </label>
-                <input type="text" name="cnpj" id="cnpj" placeholder="Digitar CNPJ somente números">
-                <label for="inscEstadual">Inscrição Estadual: </label>
-                <input type="text" name="inscEstadual" id="inscEstadual" placeholder="Digitar inscrição estadual">
-                <label for="nomeEmpresa">Nome da Empresa: </label>
-                <input type="text" name="nomeEmpresa" id="nomeEmpresa" placeholder="Digitar o nome da empresa">
-                <label for="nomeFantasia">Nome Fantasia: </label>
-                <input type="text" name="nomeFantasia" id="nomeFantasia" placeholder="Digitar o nome da empresa">
+                <br>
+                <h1> Dados da Empresa</h1>
+               
 
+                <div class="form-row ">
+                <div class="form-group col-md-6">
+                        <label class=" control-label" for="inputCodigo">Código</label>
+                        <input id="inputCodigo" name="inputCodigo" placeholder="Código" class="form-control" required value="" maxlength="40"  >
+                </div>
+                <div class="form-group col-md-6">
+                        <label class=" control-label" for="inputcnpj">CNPJ</label>
+                        <input id="inputcnpj" name="inputcnpj" placeholder="CNPJ" class="form-control" required value="" maxlength="40"  >
+                </div>
+                </div>
+                <div class="form-row">
+                <div class="form-group col-sm-6">
+                        <label class=" control-label" for="inputInscri">Inscrição Estadual</label>
+                        <input id="inputInscri" name="inputInscri" placeholder="Inscrição Estadual" class="form-control" required type="text" maxlength="40"  >
+                </div>
+                <div class="form-group col-md-6">
+                        <label class=" control-label" for="inputEmpre">Nome da Empresa</label>
+                        <input id="inputEmpre" name="inputEmpre" placeholder="Nome da Empresa" class="form-control" required type="text" maxlength="40"  >
+                </div>
+                </div>
+                <div class="form-group">
+                        <label class=" control-label" for="inputFantasia">Nome Fantasia</label>
+                        <input id="inputFantasia" name="inputFantasia" placeholder="Nome Fantasia" class="form-control" required type="text" maxlength="40"  >
+                </div>
+                
+                            
+               
             </div>
 
-            <br>
+            
 
             <div class="enderecoEmpresa">
 
-                <p>Endereço</p>
-                <label for="rua">Logradouro:</label>
-                <input type="text" name="street" id="street" placeholder="Digitar nome da rua">
-                <label for="rua">Número:</label>
-                <input type="text" name="numEmpresa" id="numEmpresa" placeholder="Ex.: 123">
-                <label for="rua">Complemento:</label>
-                <input type="text" name="complemento" id="complemento" placeholder="Ex.: Sala 01">
-                <label for="cep">CEP.:</label>
-                <input type="text" name="cep" id="cep" placeholder="Ex.: 00000-000">
-                <label for="bairro">Bairro:</label>
-                <input type="text" name="bairro" id="bairro" placeholder="">
-                <label for="municipio">Municipio:</label>
-                <input type="text" name="municipio" id="municipio" placeholder="">
-                <label for="uf">UF:</label>
+                        <hr class="mb-3" />
+                <p><h1>Endereço</h1></p>
+
+                <div class="form-row">
+                <div class="form-group col-md-6">
+                        <label class=" control-label" for="inputLogradouro">Logradouro</label>
+                        <input id="inputLogradouro" name="inputLogradouro" placeholder="Nome da rua" class="form-control" required type="text" maxlength="40"  >
+                </div>
+                <div class="form-group col-md-6">
+                        <label class=" control-label" for="inputNumero">Numero</label>
+                        <input id="inputNumero" name="inputNumero" placeholder="Ex.: 123" class="form-control" required type="text" maxlength="40"  >
+                </div>           
+                 </div>   
+                 
+                 <div class="form-row">
+                <div class="form-group col-md-6">
+                        <label class=" control-label" for="inputComplemento">Complemento</label>
+                        <input id="inputComplemento" name="inputComplemento" placeholder="Ex.: Sala 01" class="form-control" required type="text" maxlength="40"  >
+                </div>
+                <div class="form-group col-md-6">
+                        <label class=" control-label" for="inputCEP">CEP</label>
+                        <input id="inputCEP" name="inputCEP" placeholder="Ex.: 00000-000" class="form-control" required type="text" maxlength="40"  >
+                </div>
+                </div>
+                
+                
+                <div class="form-row">
+                <div class="form-group col-md-6">
+                        <label class=" control-label" for="inputBairro">Bairro</label>
+                        <input id="inputBairro" name="inputBairro" placeholder="Bairro" class="form-control" required type="text" maxlength="40"  >
+                </div>         
+                <div class="form-group col-md-6" >
+                        <label class=" control-label" for="inputMunicipio">Municipio</label>
+                        <input id="inputMunicipio" name="inputMunicipio" placeholder="Municipio" class="form-control" required type="text" maxlength="40"  >
+                </div>    
+                </div> 
+                
+                <div class="form-row">
+                <div class="form-group col-md-6">
+                        <label class=" control-label" for="inputTelefone">Telefone</label>
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                        <input id="inputTelefone" name="inputTelefone" placeholder="(00) 00000-0000" class="form-control" required type="text" maxlength="40"  >
+                </div>    
+                  <div class="form-group col-md-6">             
+                    <label class="input-group col-md-6" for="uf">UF</label>
+                    
                     <select name="uf" id="uf">
                         <option value="AL">AL</option>
                         <option value="AP">AP</option>
@@ -91,19 +152,31 @@
                         <option value="SE">SE</option>
                         <option value="TO">TO</option>
                     </select>
-                <label for="telefone">Telefone:</label>
-                <input type="text" name="telefone" id="telefone" placeholder="(00) 00000-0000">
-
+                </div>
+            </div>
             </div>
 
             <br>
 
             <button class="addFornecedor">Cadastrar Fornecedor</button>
+            
 
         </form>
     </main>
 
-    <script type="text/javascript" src="js/cadFornecedor.js"></script>
+</div>
+<div class="align-content-xl-center">
+                <hr class="mb-5 " />
+                <footer id="rodape ">
+                    <p class="mt-5 mb-3 text-muted text-center ">Copyright &copy; 2019 - by David Linhares / Mauro Weber / Wellington Ferreira<br />
+                        <a href="http://google.com " target="_blank ">Facebook</a>
+                        <a href="http://google.com " target="_blank ">Twitter</a>
+                    </p>
+                </footer>
+    
+            </div>
+        </div>
+        <script src="js/indexJs.js" type="text/javascript"></script>
 </body>
 
 </html>
