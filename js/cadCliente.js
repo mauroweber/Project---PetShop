@@ -6,14 +6,12 @@ let masckInput = document.querySelectorAll("#input");
 let form = document.querySelector("#formInput");
 // MASCARAS DOS INPUTS
 form.addEventListener('keypress', (event) => {
-    if (form.inputName.length > 50) {
-        event.preventDefault();
-    }
 
     //Mascara CPF
-    if (form.inputCpf.value || form.inputCpf.length <= 14) {
+    if (form.inputCpf.value.length <= 14 && form.inputCpf.value.length >= 0) {
+        let type = 1;
         form.inputCpf.maxLength = "14";
-        inputNumber(event);
+        inputNumber(event, type);
         if (form.inputCpf.value.length == 3 || form.inputCpf.value.length == 7) {
             form.inputCpf.value += ".";
         }
@@ -21,14 +19,21 @@ form.addEventListener('keypress', (event) => {
             form.inputCpf.value += "-";
         }
 
+
+
     } else {
-        event.stopImmediatePropagation();
+        event.cancelable();
+
     }
 
+
+
+
     // MASCARA DO TELEFONE 1
-    if (form.inputTel1.value || form.inputTel1.length <= 15) {
+    if (form.inputTel1.value.length <= 15) {
         // form.inputTel1.value = form.inputTel1.value.replace(/^(\d{2})(\d{5})(\d{4}).*/, "($1) $2-$3");
-        inputNumber(event);
+        let type = 1;
+        inputNumber(event, type);
         if (form.inputTel1.value.length == 1) {
             form.inputTel1.value = '(' + form.inputTel1.value;
         }
@@ -39,17 +44,16 @@ form.addEventListener('keypress', (event) => {
         if (form.inputTel1.value.length == 10) {
             form.inputTel1.value += '-';
         }
-        form.inputTel2.required = false;
 
     } else {
-        event.stopImmediatePropagation();
+        type = 0;
     }
 
-    // MASCARA DO TELEFONE
-    if (form.inputTel2.value || form.inputTel2.length <= 15) {
+    // MASCARA DO TELEFONE2
+    if (form.inputTel2.value.length <= 15) {
         // form.inputTel1.value = form.inputTel1.value.replace(/^(\d{2})(\d{5})(\d{4}).*/, "($1) $2-$3");
-
-        inputNumber(event);
+        let type = 1;
+        inputNumber(event, type);
         if (form.inputTel2.value.length == 1) {
             form.inputTel2.value = '(' + form.inputTel2.value;
         }
@@ -62,38 +66,38 @@ form.addEventListener('keypress', (event) => {
         }
 
     } else {
-        event.stopImmediatePropagation();
+        type = 0;
     }
 
     //MASCARA CEP - E SETANDO FALSO NO REQUERIIDO DELE
-    if (form.inputCep.value || form.inputCep.length <= 10) {
-
-        inputNumber(event);
+    if (form.inputCep.value.length <= 10) {
+        let type = 1;
+        inputNumber(event, type);
         if (form.inputCep.value.length == 1 && form.inputCep.value != 0) {
             form.inputCep.value = "0" + form.inputCep.value;
         }
         if (form.inputCep.value.length == 6) {
             form.inputCep.value += "-";
         }
-        form.inputCep.required = falyse;
+
+
     } else {
-        event.stopImmediatePropagation();
+        type = 0;
     }
-
-
 
 });
 
 // FUNÇÃO PARA PEGAR APENAS OS DIGITOS DO TECLADO
-var inputNumber = function(event) {
-    debugger;
-    var charCode = event.charCode;
-    if (charCode != 0) {
+let inputNumber = function(event, type) {
+
+    let charCode = event.charCode;
+    if (charCode != 0 && type == 1) {
         if (charCode < 48 || charCode > 57) {
             event.preventDefault();
             return event;
         }
     }
+
 
 }
 
@@ -106,80 +110,26 @@ btnCadastrar.addEventListener('click', (event) => {
     //PEGANDO OS INPUTS E VERICIDANDO SE ESTÃO REQUERIDOS
     // E DA UM ALERT NA PAGINA
     // DA PARA MELHORAR DEPOIS VOU REFATORAR ESTE CODIGO
-    if (form.inputCep.required || form.inputTel2.required /*|| form.inputRua.required || form.inputBairro.required || form.inputNum.required || form.inputCidade.required || form.inputEstado.required*/ ) {
+    debugger
+    if (!form.inputCep.required || !form.inputTel2.required || !form.inputRua.required || !form.inputBairro.required ||
+        !form.inputNum.required || !form.inputCidade.required || !form.inputEstado.required) {
         alert("Por Favor preenche campos obrigatorios");
         event.stopImmediatePropagation();
         event.preventDefault();
-
         i = form.lenth;
     } else {
         let cliente = capitarFomr(form);
 
+        if (validarCampos(cliente.cpf) || validarCampos(cliente.email) || validarCampos(cliente.cep) ||
+            validarCampos(cliente.tel1) || validarCampos(cliente.tel2)) {
+            event.preventDefault();
+            limparFormulario();
+            form.action = "teste";
+        } else {
 
-        let tbCadastro = document.querySelector("#tbCadastro")
-
-
-        let trCliente = document.createElement("tr");
-        let tdNome = document.createElement("td");
-        let tdCidade = document.createElement("td");
-        let tdTel1 = document.createElement("td");
-        let tdTel2 = document.createElement("td");
-        let tdCpf = document.createElement("td");
-        let tdEmail = document.createElement("td");
-        let tdDtNasci = document.createElement("td");
-        let tdCep = document.createElement("td");
-        let tdBairro = document.createElement("td");
-        let tdRua = document.createElement("td");
-        let tdNum = document.createElement("td");
-        let tdEstado = document.createElement("td");
-        let tdInput = document.createElement("td");
-
-        tdNome.innerHTML = cliente.nome;
-        tdCidade.innerHTML = cliente.cidade;
-        tdTel1.innerHTML = cliente.tel1;
-        tdTel2.innerHTML = cliente.tel2;
-        tdCpf.innerHTML = cliente.cpf;
-        tdEmail.innerHTML = cliente.email;
-        tdDtNasci.innerHTML = cliente.dtNascimento;
-        tdCep.innerHTML = cliente.cep;
-        tdBairro.innerHTML = cliente.bairro;
-        tdRua.innerHTML = cliente.rua;
-        tdNum.innerHTML = cliente.num;
-        tdEstado.innerHTML = cliente.estado;
-        tdInput.innerHTML = "<button type='submit' class='btnInput'>Deletar</button>"
+        }
 
 
-        trCliente.className = "table table-stripediente"
-
-        tdNome.className = "nome"
-        tdCpf.className = "cpf"
-        tdDtNasci.className = "dtNasci"
-        tdTel1.className = "tel1"
-        tdTel2.className = "tel2"
-        tdEmail.className = "email"
-        tdCep.className = "cep"
-        tdRua.className = "rua"
-        tdNum.className = "num"
-        tdBairro.className = "bairro"
-        tdCidade.className = "cidade"
-        tdEstado.className = "estado"
-
-        trCliente.appendChild(tdNome)
-        trCliente.appendChild(tdCpf)
-        trCliente.appendChild(tdDtNasci)
-        trCliente.appendChild(tdTel1)
-        trCliente.appendChild(tdTel2)
-        trCliente.appendChild(tdEmail)
-        trCliente.appendChild(tdCep)
-        trCliente.appendChild(tdRua)
-        trCliente.appendChild(tdNum)
-        trCliente.appendChild(tdBairro)
-        trCliente.appendChild(tdCidade)
-        trCliente.appendChild(tdEstado)
-        trCliente.appendChild(tdInput)
-        tbCadastro.querySelector("tbody").appendChild(trCliente)
-
-        limparFormulario();
     }
 });
 
@@ -223,6 +173,19 @@ function limparFormulario() {
 
 }
 
+function validarCampos(valor) {
+    let regCep = /[0-9]+$/;
+    let regtel = /\([0-9]{2}\)\ [0-9]{4,5}-[0-9]{4}$/;
+    let regEmail = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
+    let regcpf = /\[0-9]{2}\ [0-9]{4,6}-[0-9]{3,4}$/;
+
+    if (regCep.test(valor) || regtel.test(valor) || regEmail.test(valor) || regcpf.test(valor)) {
+        return true;
+    } else {
+        return false;
+    }
+
+};
 
 function alterar() {
 
@@ -235,13 +198,9 @@ function alterar() {
 };
 
 //apaga linha
-
-let removerCliente = document.querySelector("#tabCliente")
-
+//let removerCliente = document.querySelector("#tabCliente")
 // removerCliente.addEventListener("click", (event) => {
-
 //     if (event.target.className == "btnInput") {
 //         event.target.parentNode.parentNode.remove()
 //     }
-
-// })
+// })s

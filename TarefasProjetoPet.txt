@@ -1,0 +1,12 @@
+			TAREFAS A SER REALIZADAS!!
+	
+
+	1 Tela de Login , colocar as mensagens de erro, se usuraio não cadastrado ou senha invalida,  e se usuario foi conectado!
+
+	2 Tela ce Cadastro de Cliente Mandar os dados validados para o controlerCadPessoas.
+
+	3 Criar arquivos de controler cad Fornecedores cad produto cad clientes .
+
+	3 criar a Pasta DAO para realizar o crud.
+
+	
