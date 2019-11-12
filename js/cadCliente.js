@@ -29,7 +29,6 @@ form.addEventListener('keypress', (event) => {
     if (form.inputTel1.value || form.inputTel1.length <= 15) {
         // form.inputTel1.value = form.inputTel1.value.replace(/^(\d{2})(\d{5})(\d{4}).*/, "($1) $2-$3");
         inputNumber(event);
-
         if (form.inputTel1.value.length == 1) {
             form.inputTel1.value = '(' + form.inputTel1.value;
         }
@@ -76,7 +75,7 @@ form.addEventListener('keypress', (event) => {
         if (form.inputCep.value.length == 6) {
             form.inputCep.value += "-";
         }
-        form.inputCep.required = false;
+        form.inputCep.required = falyse;
     } else {
         event.stopImmediatePropagation();
     }
@@ -239,10 +238,10 @@ function alterar() {
 
 let removerCliente = document.querySelector("#tabCliente")
 
-removerCliente.addEventListener("click", (event) => {
+// removerCliente.addEventListener("click", (event) => {
 
-    if (event.target.className == "btnInput") {
-        event.target.parentNode.parentNode.remove()
-    }
+//     if (event.target.className == "btnInput") {
+//         event.target.parentNode.parentNode.remove()
+//     }
 
-})
+// })
