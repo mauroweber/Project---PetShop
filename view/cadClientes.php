@@ -5,6 +5,7 @@ if (!isset($_SESSION['user_name'])) {
     exit;
 }
 
+
 ?>
 
 <!DOCTYPE html>
@@ -14,9 +15,10 @@ if (!isset($_SESSION['user_name'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../lib/bootstrap.css" />
-    <--link rel="stylesheet" type="text/css" href="../_css/estiloCliente.css" /-->
+   <!-- link rel="stylesheet" type="text/css" href="../_css/estiloCliente.css" <-- / -->
     <link rel="stylesheet" type="text/css" href="../_css/index.css" />
     <link rel="icon" href="../img/dog.png">
+    <script src="../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
 
     <title>cadastrar</title>
 </head>
@@ -72,9 +74,34 @@ if (!isset($_SESSION['user_name'])) {
 
             </ul>
         </nav>
+        <?php
+        if(isset($_SESSION['msg'])){
+            $msg = $_SESSION['msg'];
+            if($msg == 0){
+                echo "<script language='javascript' type='text/javascript'>
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'Cep Invalido',
+                        });
+                    </script>";
+            }elseif($msg == 1){
+                echo "<script language='javascript' type='text/javascript'>
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: 'Casdtro Salvo com Sucesso',
+                            showConfirmButton: false, 
+                            timer: 2000 });
+                    </script>";
+            };
+            unset($_SESSION['msg']);
+        };
+        
+        ?>
         <br>
 
-        <form id="formInput" method="POST" action="">
+        <form id="formInput" method="" action="">
             <div class="panel-heading">
                 <h5>Cadastro Cliente</h5>
             </div>
@@ -98,12 +125,12 @@ if (!isset($_SESSION['user_name'])) {
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label class="control-label" for="inputCpf">CPF*</label>
-                        <input id="inputCpf" name="inputCpf" placeholder="Apenas números" class="form-control" required type="text" maxlength="11" pattern="/\d{3}\.\d{3}\.\d{3}-\d{2}/">
+                        <input id="inputCpf" name="inputCpf" placeholder="Apenas números" class="form-control" required type="text" maxlength="11" pattern="/\[0-9]{2}\ [0-9]{4,6}-[0-9]{3,4}$/">
                     </div>
 
                     <div class="form-group col-md-6">
-                        <label class="control-label" for="inputDtNasc">Nascimento*</label>
-                        <input id="inputNasc" name="inputDtNasc" placeholder="DD/MM/AAAA" class="form-control" required type="date" maxlength="10">
+                        <label class="control-label" for="inputNasc">Nascimento*</label>
+                        <input id="inputNasc" name="inputNasc" placeholder="DD/MM/AAAA" class="form-control" required type="date" maxlength="10">
                     </div>
 
                 </div>
@@ -170,7 +197,7 @@ if (!isset($_SESSION['user_name'])) {
                         <label class="control-label" for="inputEstado">Estado</label>
                         <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
                         <span class="input-group"><i class="glyphicon glyphicon-envelope"></i></span>
-                        <select id="Estado" name="uf" id="uf">
+                        <select id="inputEstado" name="uf" id="uf" required>
                             <option value="AL">AL</option>
                             <option value="AP">AP</option>
                             <option value="AM">AM</option>
@@ -204,8 +231,8 @@ if (!isset($_SESSION['user_name'])) {
                 <div class="form-group">
                     <label class="col-md-2 control-label" for="Cadastrar"></label>
                     <div class="col-md-8">
-                        <input id="btnCadastrar" name="btnCadastrar" class="btn btn-success" type="Submit" placeholder="Cadastrar" requerid />
-                        <input id="Cancelar" name="Cancelar" class="btn btn-danger" type="Reset" placeholder="Cancelar" />
+                        <button id="btnCadastrar" name="btnCadastrar" class="btn btn-success" type="submit" placeholder="Cadastrar">Cadastrar</button>
+                        <button id="Cancelar" name="Cancelar" class="btn btn-danger" type="Reset" placeholder="Cancelar">Cancelar</button>;
                     </div>
                 </div>
             </div>

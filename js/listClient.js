@@ -60,3 +60,23 @@ trCliente.appendChild(tdCidade)
 trCliente.appendChild(tdEstado)
 trCliente.appendChild(tdInput)
 tbCadastro.querySelector("tbody").appendChild(trCliente)
+
+
+function limparFormulario() {
+    document.querySelector('nome').value = "";
+    document.querySelector('cidade').value = "";
+    document.querySelector('telefone').value = "";
+    document.querySelector('nome').value = "";
+    document.querySelector('cpf').value = "";
+    document.querySelector('dtNasci').value = "";
+    document.querySelector('t1').value = "";
+    document.querySelector('t2').value = "";
+    document.querySelector('email').value = "";
+    document.querySelector('cep').value = "";
+    document.querySelector('rua').value = "";
+    document.querySelector('num').value = "";
+    document.querySelector('bairro').value = "";
+    document.querySelector('cidade').value = "";
+    document.querySelector('estado').value = "";
+
+}

@@ -42,6 +42,29 @@
                     <h3>Login</h3>
                 </div>
                 <div class="card-body">
+                <?php
+                    if(isset($_SESSION['msg'])){
+                        $msg = $_SESSION['msg'];
+                        if($msg == 0){                            
+                            echo "<script language='javascript' type='text/javascript'>
+                                Swal.fire({                                    
+                                    icon: 'success',
+                                    title: 'Cadastro Salvo com Sucesso',
+                                    showConfirmButton: false, 
+                                    timer: 2000 });
+                            </script>";
+                        }elseif($msg == 1){
+                            echo "<script language='javascript' type='text/javascript'>
+                                    Swal.fire({
+                                        icon: 'error',
+                                        title: 'Oops...',
+                                        text: 'Login Invalido',
+                                    });
+                                </script>";
+                        };
+                        unset($_SESSION['msg']);
+                    };                
+                ?>
                     <form method="POST" action="controler/login.php">
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
@@ -60,13 +83,7 @@
                             <input type="checkbox">Lembre Me
                         </div> -->
                         <div class="form-group">
-                            <input type="submit" onclick="Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: 'Your work has been saved',
-            showConfirmButton: false,
-            timer: 1500
-          })" name="btnLogar" id= "btnLogar" value="Entrar" class="btn float-right login_btn">
+                            <input type="submit" name="btnLogar" id= "btnLogar" value="Entrar" class="btn float-right login_btn">
                         </div>
                     </form>
                 </div>

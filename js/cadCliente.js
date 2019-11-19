@@ -7,11 +7,11 @@ let form = document.querySelector("#formInput");
 // MASCARAS DOS INPUTS
 form.addEventListener('keypress', (event) => {
 
+
+
     //Mascara CPF
-    if (form.inputCpf.value.length <= 14 && form.inputCpf.value.length >= 0) {
-        let type = 1;
+    if (form.inputCpf.value.length < 14 && form.inputCpf.value.length >= 0) {
         form.inputCpf.maxLength = "14";
-        inputNumber(event, type);
         if (form.inputCpf.value.length == 3 || form.inputCpf.value.length == 7) {
             form.inputCpf.value += ".";
         }
@@ -21,19 +21,12 @@ form.addEventListener('keypress', (event) => {
 
 
 
-    } else {
-        event.cancelable();
-
     }
 
-
-
-
     // MASCARA DO TELEFONE 1
-    if (form.inputTel1.value.length <= 15) {
+    if (form.inputTel1.value.length <= 15 && form.inputTel1.value.length > 0) {
+
         // form.inputTel1.value = form.inputTel1.value.replace(/^(\d{2})(\d{5})(\d{4}).*/, "($1) $2-$3");
-        let type = 1;
-        inputNumber(event, type);
         if (form.inputTel1.value.length == 1) {
             form.inputTel1.value = '(' + form.inputTel1.value;
         }
@@ -45,15 +38,12 @@ form.addEventListener('keypress', (event) => {
             form.inputTel1.value += '-';
         }
 
-    } else {
-        type = 0;
     }
 
     // MASCARA DO TELEFONE2
-    if (form.inputTel2.value.length <= 15) {
+    if (form.inputTel2.value.length <= 15 && form.inputTel2.value.length > 0) {
         // form.inputTel1.value = form.inputTel1.value.replace(/^(\d{2})(\d{5})(\d{4}).*/, "($1) $2-$3");
-        let type = 1;
-        inputNumber(event, type);
+
         if (form.inputTel2.value.length == 1) {
             form.inputTel2.value = '(' + form.inputTel2.value;
         }
@@ -65,15 +55,12 @@ form.addEventListener('keypress', (event) => {
             form.inputTel2.value += '-';
         }
 
-    } else {
-        type = 0;
     }
 
     //MASCARA CEP - E SETANDO FALSO NO REQUERIIDO DELE
-    if (form.inputCep.value.length <= 10) {
-        let type = 1;
-        inputNumber(event, type);
-        if (form.inputCep.value.length == 1 && form.inputCep.value != 0) {
+    if (form.inputCep.value.length < 10 && form.inputCep.value.length > 0) {
+
+        if (form.inputCep.value.length == 1 && form.inputCep.value.length > 0) {
             form.inputCep.value = "0" + form.inputCep.value;
         }
         if (form.inputCep.value.length == 6) {
@@ -81,17 +68,16 @@ form.addEventListener('keypress', (event) => {
         }
 
 
-    } else {
-        type = 0;
+
     }
 
 });
 
 // FUNÇÃO PARA PEGAR APENAS OS DIGITOS DO TECLADO
-let inputNumber = function(event, type) {
+let inputNumber = function(event) {
 
     let charCode = event.charCode;
-    if (charCode != 0 && type == 1) {
+    if (charCode != 0) {
         if (charCode < 48 || charCode > 57) {
             event.preventDefault();
             return event;
@@ -99,6 +85,10 @@ let inputNumber = function(event, type) {
     }
 
 
+}
+
+let inputAll = function(event) {
+    return event;
 }
 
 
@@ -111,21 +101,58 @@ btnCadastrar.addEventListener('click', (event) => {
     // E DA UM ALERT NA PAGINA
     // DA PARA MELHORAR DEPOIS VOU REFATORAR ESTE CODIGO
     debugger
-    if (!form.inputCep.required || !form.inputTel2.required || !form.inputRua.required || !form.inputBairro.required ||
-        !form.inputNum.required || !form.inputCidade.required || !form.inputEstado.required) {
-        alert("Por Favor preenche campos obrigatorios");
+    if (form.inputCep.value == "" || form.inputTel2.value == "" || form.inputRua.value == "" || form.inputBairro.value == "" ||
+        form.inputNum.value == "" || form.inputCidade.value == "" || form.inputEstado.value == "") {
         event.stopImmediatePropagation();
         event.preventDefault();
-        i = form.lenth;
+
     } else {
         let cliente = capitarFomr(form);
 
-        if (validarCampos(cliente.cpf) || validarCampos(cliente.email) || validarCampos(cliente.cep) ||
-            validarCampos(cliente.tel1) || validarCampos(cliente.tel2)) {
+        if (!validarCampos(cliente.cpf)) {
+
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'CPF INVALIDO',
+            });
             event.preventDefault();
-            limparFormulario();
-            form.action = "teste";
+
+        } else if (!validarCampos(cliente.email)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Email Invalido',
+            });
+            event.preventDefault();
+
+        } else if (!validarCampos(cliente.cep)) {
+
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Cep Invalido',
+            });
+            event.preventDefault();
+        } else if (!validarCampos(cliente.tel1)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Telefone Invalido',
+            });
+            event.preventDefault();
+        } else if (!validarCampos(cliente.tel2)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Telefone Invalido',
+            });
+            event.preventDefault();
         } else {
+
+            form.method = "POST";
+            form.action = "../controler/cadClientControler.php";
+
 
         }
 
@@ -138,7 +165,7 @@ function capitarFomr(form) {
     cliente = {
         nome: form.inputName.value,
         cpf: form.inputCpf.value,
-        dtNascimento: form.inputDtNasc.value,
+        dtNascimento: form.inputNasc.value,
         tel1: form.inputTel1.value,
         tel2: form.inputTel2.value,
         email: form.inputEmail.value,
@@ -154,24 +181,6 @@ function capitarFomr(form) {
     return cliente;
 }
 
-function limparFormulario() {
-    document.querySelector('nome').value = "";
-    document.querySelector('cidade').value = "";
-    document.querySelector('telefone').value = "";
-    document.querySelector('nome').value = "";
-    document.querySelector('cpf').value = "";
-    document.querySelector('dtNasci').value = "";
-    document.querySelector('t1').value = "";
-    document.querySelector('t2').value = "";
-    document.querySelector('email').value = "";
-    document.querySelector('cep').value = "";
-    document.querySelector('rua').value = "";
-    document.querySelector('num').value = "";
-    document.querySelector('bairro').value = "";
-    document.querySelector('cidade').value = "";
-    document.querySelector('estado').value = "";
-
-}
 
 function validarCampos(valor) {
     let regCep = /[0-9]+$/;
