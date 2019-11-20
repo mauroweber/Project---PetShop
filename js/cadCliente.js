@@ -1,8 +1,6 @@
 let btnCadastrar = document.querySelector("#btnCadastrar");
-let tableCliente = document.querySelector("#tabelaCliente");
-let masckInput = document.querySelectorAll("#input");
-
 let form = document.querySelector("#formInput");
+
 // MASCARAS DOS INPUTS
 form.addEventListener('keypress', (event) => {
 
@@ -69,10 +67,6 @@ let inputNumber = (event) => {
             return event;
         }
     }
-}
-
-let inputAll = (event) => {
-    return event;
 }
 
 btnCadastrar.addEventListener('click', (event) => {
@@ -161,27 +155,13 @@ function validarCampos(valor) {
     let regEmail = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
     let regcpf = /\[0-9]{2}\ [0-9]{4,6}-[0-9]{3,4}$/;
 
-    if (regCep.test(valor) || regtel.test(valor) || regEmail.test(valor) || regcpf.test(valor)) {
+    let valor1 = valor.replace(/[^0-9]/g, '')
+    if (regCep.test(valor) || regtel.test(valor) || regcpf.test(valor) || regEmail.test(valor)) {
+
         return true;
+
     } else {
         return false;
     }
 
 };
-
-function alterar() {
-
-    h1 = document.createElement("h1");
-    h1.innerHTML = inputTest;
-    h1.className = "TesteH1";
-
-    console.log("choegou " + inputTest)
-};
-
-//apaga linha
-//let removerCliente = document.querySelector("#tabCliente")
-// removerCliente.addEventListener("click", (event) => {
-//     if (event.target.className == "btnInput") {
-//         event.target.parentNode.parentNode.remove()
-//     }
-// })s

@@ -17,7 +17,7 @@ if (!isset($_SESSION['user_name'])) {
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="icon" href="../img/dog.png">
   <link rel="stylesheet" type="text/css" href="../lib/bootstrap.css" />
-  <link rel="stylesheet" type="text/css" href="../_css/estiloFornecedor.css" />
+  <!--link rel="stylesheet" type="text/css" href="../_css/estiloFornecedor.css" -->
   <link rel="stylesheet" type="text/css" href="../_css/index.css">
   <title>Cadastro de Fornecedor</title>
 </head>
@@ -77,8 +77,8 @@ if (!isset($_SESSION['user_name'])) {
           <h1> Dados da Empresa</h1>
           <div class="form-row ">
             <div class="form-group col-md-6">
-              <label class=" control-label" for="inputCodigo">Código</label>
-              <input id="inputCodigo" name="inputCodigo" placeholder="Código" class="form-control" required value="" maxlength="40">
+              <label class=" control-label" for="inputCodEmpresa">Código</label>
+              <input id="inputCodEmpresa" name="inputCodEmpresa" placeholder="Código" class="form-control" required value="" maxlength="40">
             </div>
             <div class="form-group col-md-6">
               <label class=" control-label" for="inputcnpj">CNPJ</label>
@@ -87,19 +87,17 @@ if (!isset($_SESSION['user_name'])) {
           </div>
           <div class="form-row">
             <div class="form-group col-sm-6">
-              <label class=" control-label" for="inputInscri">Inscrição
-                Estadual</label>
-              <input id="inputInscri" name="inputInscri" placeholder="Inscrição Estadual" class="form-control" required type="text" maxlength="40">
+              <label class=" control-label" for="inputNumInscricao">Inscrição Estadual</label>
+              <input id="inputNumInscricao" name="inputNumInscricao" placeholder="Inscrição Estadual" class="form-control" required type="text" maxlength="40">
             </div>
             <div class="form-group col-md-6">
-              <label class=" control-label" for="inputEmpre">Nome da
-                Empresa</label>
-              <input id="inputEmpre" name="inputEmpre" placeholder="Nome da Empresa" class="form-control" required type="text" maxlength="40">
+              <label class=" control-label" for="inputNmEmpresa">Nome da Empresa</label>
+              <input id="inputNmEmpresa" name="inputNmEmpresa" placeholder="Nome da Empresa" class="form-control" required type="text" maxlength="40">
             </div>
           </div>
           <div class="form-group">
             <label class=" control-label" for="inputFantasia">Nome Fantasia</label>
-            <input id="inputFantasia" name="inputFantasia" placeholder="Nome Fantasia" class="form-control" required type="text" maxlength="40">
+            <input id="inputNmFantasia" name="inputNmFantasia" placeholder="Nome Fantasia" class="form-control" required type="text" maxlength="40">
           </div>
         </div>
         <div class="enderecoEmpresa">
@@ -144,8 +142,8 @@ if (!isset($_SESSION['user_name'])) {
               <input id="inputTelefone" name="inputTelefone" placeholder="(00) 00000-0000" class="form-control" required type="text" maxlength="40">
             </div>
             <div class="form-group col-md-6">
-              <label class="input-group col-md-6" for="uf">UF</label>
-              <select name="uf" id="uf">
+              <label class="input-group col-md-6" for="selectUf">UF</label>
+              <select name="selectUf" id="selectUf">
                 <option value="AL">AL</option>
                 <option value="AP">AP</option>
                 <option value="AM">AM</option>
@@ -177,7 +175,13 @@ if (!isset($_SESSION['user_name'])) {
           </div>
         </div>
         <br>
-        <button class="addFornecedor">Cadastrar Fornecedor</button>
+				<div class="form-group">
+					<label class="col-md-2 control-label" for="Cadastrar"></label>
+					<div class="col-md-8">
+						<button id="btnCadastrar" name="btnCadastrar" class="btn btn-success" type="submit" placeholder="Cadastrar">Cadastrar</button>
+						<button id="Cancelar" name="Cancelar" class="btn btn-danger" type="Reset" placeholder="Cancelar">Cancelar</button>;
+					</div>
+				</div>
       </form>
     </main>
     <div class="align-content-xl-center">
