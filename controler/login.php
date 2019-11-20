@@ -1,7 +1,4 @@
-
 <?php
-
-
 
 require '../conexao.php';
 
@@ -11,8 +8,8 @@ if (!empty($_POST) AND (empty($_POST['usuario'] OR empty($_POST['senha'])))) {
     exit;
 } else {
     $usuario = $_POST['usuario'];
-    $senha = $_POST['senha'];
-    $sql = 'SELECT * FROM usuarios WHERE usuario = :usuario  AND senha = :senha';
+    $senha   = $_POST['senha'];
+    $sql     = 'SELECT * FROM usuarios WHERE usuario = :usuario  AND senha = :senha';
 
     $coon = getConnection();
     $stmt = $coon->prepare($sql);
@@ -20,13 +17,13 @@ if (!empty($_POST) AND (empty($_POST['usuario'] OR empty($_POST['senha'])))) {
     $stmt->bindParam(':senha', $senha);
 
     $result = $stmt->execute();
-
     $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
     session_start();
+    
     if (count($users) <= 0) {
-        $msg = 1;
-       
-    }else{
+        $msg = 1;       
+    } else {
         $msg = 2;
        
         $_SESSION['logado'] = true;
@@ -39,7 +36,5 @@ if (!empty($_POST) AND (empty($_POST['usuario'] OR empty($_POST['senha'])))) {
 
     $coon = null;
 }
-
-
 
 ?>

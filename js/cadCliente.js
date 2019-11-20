@@ -2,12 +2,9 @@ let btnCadastrar = document.querySelector("#btnCadastrar");
 let tableCliente = document.querySelector("#tabelaCliente");
 let masckInput = document.querySelectorAll("#input");
 
-//
 let form = document.querySelector("#formInput");
 // MASCARAS DOS INPUTS
 form.addEventListener('keypress', (event) => {
-
-
 
     //Mascara CPF
     if (form.inputCpf.value.length < 14 && form.inputCpf.value.length >= 0) {
@@ -18,9 +15,6 @@ form.addEventListener('keypress', (event) => {
         if (form.inputCpf.value.length == 11) {
             form.inputCpf.value += "-";
         }
-
-
-
     }
 
     // MASCARA DO TELEFONE 1
@@ -30,14 +24,12 @@ form.addEventListener('keypress', (event) => {
         if (form.inputTel1.value.length == 1) {
             form.inputTel1.value = '(' + form.inputTel1.value;
         }
-
         if (form.inputTel1.value.length == 3) {
             form.inputTel1.value += ') ';
         }
         if (form.inputTel1.value.length == 10) {
             form.inputTel1.value += '-';
         }
-
     }
 
     // MASCARA DO TELEFONE2
@@ -47,14 +39,12 @@ form.addEventListener('keypress', (event) => {
         if (form.inputTel2.value.length == 1) {
             form.inputTel2.value = '(' + form.inputTel2.value;
         }
-
         if (form.inputTel2.value.length == 3) {
             form.inputTel2.value += ') ';
         }
         if (form.inputTel2.value.length == 10) {
             form.inputTel2.value += '-';
         }
-
     }
 
     //MASCARA CEP - E SETANDO FALSO NO REQUERIIDO DELE
@@ -66,15 +56,11 @@ form.addEventListener('keypress', (event) => {
         if (form.inputCep.value.length == 6) {
             form.inputCep.value += "-";
         }
-
-
-
     }
-
 });
 
 // FUNÇÃO PARA PEGAR APENAS OS DIGITOS DO TECLADO
-let inputNumber = function(event) {
+let inputNumber = (event) => {
 
     let charCode = event.charCode;
     if (charCode != 0) {
@@ -83,19 +69,13 @@ let inputNumber = function(event) {
             return event;
         }
     }
-
-
 }
 
-let inputAll = function(event) {
+let inputAll = (event) => {
     return event;
 }
 
-
-
 btnCadastrar.addEventListener('click', (event) => {
-
-
 
     //PEGANDO OS INPUTS E VERICIDANDO SE ESTÃO REQUERIDOS
     // E DA UM ALERT NA PAGINA
@@ -110,7 +90,6 @@ btnCadastrar.addEventListener('click', (event) => {
         let cliente = capitarFomr(form);
 
         if (!validarCampos(cliente.cpf)) {
-
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
@@ -127,13 +106,13 @@ btnCadastrar.addEventListener('click', (event) => {
             event.preventDefault();
 
         } else if (!validarCampos(cliente.cep)) {
-
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
                 text: 'Cep Invalido',
             });
             event.preventDefault();
+
         } else if (!validarCampos(cliente.tel1)) {
             Swal.fire({
                 icon: 'error',
@@ -141,6 +120,7 @@ btnCadastrar.addEventListener('click', (event) => {
                 text: 'Telefone Invalido',
             });
             event.preventDefault();
+
         } else if (!validarCampos(cliente.tel2)) {
             Swal.fire({
                 icon: 'error',
@@ -148,15 +128,11 @@ btnCadastrar.addEventListener('click', (event) => {
                 text: 'Telefone Invalido',
             });
             event.preventDefault();
-        } else {
 
+        } else {
             form.method = "POST";
             form.action = "../controler/cadClientControler.php";
-
-
         }
-
-
     }
 });
 
@@ -175,12 +151,9 @@ function capitarFomr(form) {
         bairro: form.inputBairro.value,
         cidade: form.inputCidade.value,
         estado: form.inputEstado.value
-
     };
-
     return cliente;
 }
-
 
 function validarCampos(valor) {
     let regCep = /[0-9]+$/;
@@ -200,7 +173,6 @@ function alterar() {
 
     h1 = document.createElement("h1");
     h1.innerHTML = inputTest;
-
     h1.className = "TesteH1";
 
     console.log("choegou " + inputTest)
