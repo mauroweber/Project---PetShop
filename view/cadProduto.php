@@ -110,6 +110,9 @@ include '../controler/fornecedorDAO.php';
 
         ?>
         <br>
+        <div>
+
+        </div>
         <form id="formInput" method="POST" action="../controler/produtoDAO.php">
 
             <div class="panel-heading">
@@ -170,7 +173,7 @@ include '../controler/fornecedorDAO.php';
                             <?php
                             $result = listarFornecedor();
                             foreach ($result as $fornecedor) {
-                                echo "<option id = 'idFornecedor'  name = 'idFornecedor'>" . $fornecedor["id_fornecedor"] . " - " . $fornecedor["nm_fornecedor"] . "</option>";
+                                echo "<option>" . $fornecedor["id_fornecedor"] . " - " . $fornecedor["nm_empresa"] . "</option>";
                             };
                             ?>
                         </select>

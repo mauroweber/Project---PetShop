@@ -3,13 +3,7 @@
    
 
     /*(A VARIAVEL _POST NÃO EXISTE) OU  ( ELA ESTA VAZIA)*/
-    if (!isset($_POST['cadastrarFornecedor']) || empty($_POST)) {
-        $msg = 0;
-        session_start();
-        $_SESSION['msg'] = $msg;
-        header("Location: ../view/cadFornecedor.php");
-        /*SE A VARIAVEL CADASTARFORNECEDOR E NÃO ESTIVER VASZIA*/
-    } elseif(isset($_POST['cadastrarFornecedor']) || !empty($_POST)) {
+    if(isset($_POST['cadastrarFornecedor']) || !empty($_POST)) {
         $msg = insertFornecedor();
         session_start();
         $_SESSION['msg'] = $msg;
@@ -21,10 +15,6 @@
         $idFornecedor = $_GET['idFornecedor'];
         $msg = deletarFornecedor($idFornecedor);
         session_start();
-        $_SESSION["msg"] = $msg;
-        header("Location: ../view/listFornecedor.php");
-    }elseif(!isset($_GET['idFornecedor'])){
-        $msg = 0;
         $_SESSION["msg"] = $msg;
         header("Location: ../view/listFornecedor.php");
     }

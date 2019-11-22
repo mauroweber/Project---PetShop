@@ -29,3 +29,22 @@ Vendas de Produtos:
 
 Execute comando abaixo no terminal do Projeto.
 npm install sweetalert2
+
+VERSÕES
+
+V.0.1.0;
+Incio do Projeto
+
+V.0.2.0;
+Telas e Layout ;
+
+v.0.3.0;
+Validações cadastro clinente e converção para arquivos PHP.
+
+v.0.4.0;
+Finalzação CRUDS.
+Criações de Tabelas.
+Listagem com relacionamento de 2 Tabelas com Inner Join
+
+v.0.4.1
+ Correção da Atualizando Crud 

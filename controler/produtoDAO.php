@@ -4,12 +4,7 @@
 
     /*(A VARIAVEL _POST NÃO EXISTE) OU  ( ELA ESTA VAZIA)*/
     //INSERT PRODUTO
-    if (!isset($_POST['cadastrarProduto']) || empty($_POST)) {
-        session_start();
-        $msg = 0;
-        $_SESSION['msg'] = $msg;
-        header("Location: ../view/cadProduto.php");
-    } elseif (isset($_POST['cadastrarProduto']) || !empty($_POST))  {
+    if (isset($_POST['cadastrarProduto']) || !empty($_POST))  {
         session_start();
         $msg = insertProduto();
         $_SESSION['msg'] = $msg;
@@ -20,10 +15,10 @@
     //UPDATE PRODUTO
     if (isset($_GET['idProduto'])){
         $idProduto = $_GET['idProduto'];
-        $msg = alterarFornecedor($idProduto);
+        $msg = deletarProduto($idProduto);
         session_start();
         $_SESSION["msg"] = $msg;
-        header("Location: ../view/listProduto.php");
+        header("Location: ../view/listProdutos.php");
     }
 
     function insertProduto(){
@@ -31,7 +26,10 @@
         $vl_custo           = floatval($_POST['valCusto']);
         $mg_lucro           = floatval($_POST['mgLucro']);
         $cod_produto        = intval($_POST['codigo']);
-        $id_fornecedor_fk   = intval($_POST['idFornecedor']);
+        $id_fornecedor_fk   = getNumeros($_POST['fornecedor']);
+        echo("<pre>");
+        var_dump($_POST);
+        echo("</pre>");
         $descricao          = $_POST['descricao'];
         $nm_produto         = $_POST['nomeDoProduto'];
         $cod_barras         = $_POST['codBarras'];
@@ -56,7 +54,7 @@
     $stmt->bindParam(':vl_custo', $vl_custo, PDO::PARAM_STR);
     $stmt->bindParam(':mg_lucro', $mg_lucro, PDO::PARAM_STR);
     $stmt->bindParam(':cod_produto', $cod_produto, PDO::PARAM_STR);
-    $stmt->bindParam(':id_fornecedor_fk', $id_fornecedor_fk, PDO::PARAM_STR);
+    $stmt->bindParam(':id_fornecedor_fk', intval($id_fornecedor_fk), PDO::PARAM_STR);
     $stmt->bindParam(':descricao', $descricao, PDO::PARAM_STR);
     $stmt->bindParam(':nm_produto', $nm_produto, PDO::PARAM_STR);
     $stmt->bindParam(':cod_barras', $cod_barras, PDO::PARAM_STR);
@@ -77,7 +75,7 @@
     };
 
     function listarRelatorioProduto(){
-        $sql= "SELECT p.nm_produto, p.descricao, p.vl_venda , f.nm_empresa, f.cnpj , f.num_telefone FROM
+        $sql= "SELECT p.idProduto, p.nm_produto, p.descricao, p.vl_venda , f.nm_empresa, f.cnpj , f.num_telefone FROM
         tb_produto AS p INNER JOIN tb_fornecedor AS f ON id_fornecedor_fk = id_fornecedor;";
         $coon = getConnection();
 
@@ -132,10 +130,10 @@
 
     function deletarProduto($idProduto){
         $coon = getConnection();
-        $sql = "DELETE FROM tb_produto WHERE id_produto = :idProduto";
+        $sql = "DELETE FROM tb_produto WHERE idProduto = :idProduto";
         $stmt = $coon->prepare($sql);
         $stmt->bindParam(":idProduto", $idProduto);
-        if(!$stmt->execute()){
+        if($stmt->execute()){
             $msg =0;
         }else{
             $msg = 1;

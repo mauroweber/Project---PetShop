@@ -5,7 +5,7 @@ if (!isset($_SESSION['user_name'])) {
     exit;
 }
 
-require '../controler/produtoDAO.php';
+require '../controler/Fornecedor f /DAO.php';
 
 
 ?>
@@ -100,7 +100,7 @@ require '../controler/produtoDAO.php';
                     $result = listarRelatorioProduto();
                     if (!empty($result)) {
                         foreach ($result as $produto) {
-                            $idProduto = $produto['idProduto'];
+                            $idProduto = $produto['id_produto'];
                             echo "<tr>";
                             echo "<td><a href='../controler/produtoDAO.php?idProduto=" . $produto['idProduto'] . "' class='btn btn-danger'><b>0</b></a>" .
                                 "<a id='Cancelar' name='Cancelar' class='btn btn-success' ><b>x</b></a></td>";
