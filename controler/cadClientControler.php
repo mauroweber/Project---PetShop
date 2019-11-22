@@ -77,23 +77,7 @@ function alterar(){
         WHERE id_cliente = :id";
 };
 
-function removerCliente($id){
-    $sql = "DELETE FROM tb_clientes WHERE id_cliente = :id";
-    $coon = getConnection();
-    $stmt = $coon->prepare($sql);
-    $stmt->bindParam(":id", $id);
-    if($stmt->execute()){
-        $msg =0;
-    }else{
-        $msg = 1;
-    }
-    echo "cheguei";
-    var_dump($id);
-    session_start();
-    $_SESSION["msg"] = $msg;
-    $coon = null;
-    header("Location: ../view/listClientes.php");
-};
+
 
 function getNumeros($valor){
     return preg_replace("/[^0-9]/", "", $valor);

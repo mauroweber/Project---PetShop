@@ -178,7 +178,7 @@ if (!isset($_SESSION['user_name'])) {
 				<div class="form-group">
 					<label class="col-md-2 control-label" for="Cadastrar"></label>
 					<div class="col-md-8">
-						<button id="btnCadastrar" name="btnCadastrar" class="btn btn-success" type="submit" placeholder="Cadastrar">Cadastrar</button>
+						<button id="cadastrarFornecedor" name="cadastrarFornecedor" class="btn btn-success" type="submit" placeholder="Cadastrar">Cadastrar</button>
 						<button id="Cancelar" name="Cancelar" class="btn btn-danger" type="Reset" placeholder="Cancelar">Cancelar</button>;
 					</div>
 				</div>

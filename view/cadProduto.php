@@ -4,7 +4,8 @@ if (!isset($_SESSION['user_name'])) {
     header("Location: ../index.php");
     exit;
 }
-include '../controler/cadClientControler.php';
+include '../controler/fornecedorDAO.php';
+
 
 ?>
 
@@ -72,8 +73,44 @@ include '../controler/cadClientControler.php';
 
             </ul>
         </nav>
+        <?php
+            if (isset($_SESSION['msg'])) {
+                $msg = $_SESSION['msg'];
+                if ($msg == 0) {
+                    echo "<script language='javascript' type='text/javascript'>
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'Erro - 0 : Preencha o Formulario !',
+                            showConfirmButton: false, 
+                            timer: 2000 
+                        });
+                    </script>";
+                } elseif ($msg == 1) {
+                    echo "<script language='javascript' type='text/javascript'>
+                        Swal.fire({
+                            icon: 'error',
+                            title: ' Oops...',
+                            text: 'Erro - 1 : Error ao Inserir No Banco! ',
+                            showConfirmButton: false, 
+                            timer: 2000 
+                        });
+                    </script>";
+                } elseif ($msg == 2) {
+                    echo "<script language='javascript' type='text/javascript'>
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Cadastro Salvo com Sucesso',
+                            showConfirmButton: false, 
+                            timer: 2000 });
+                    </script>";
+                };
+                    unset($_SESSION['msg']);
+            };
+
+        ?>
         <br>
-        <form id="formInput">
+        <form id="formInput" method="POST" action="../controler/produtoDAO.php">
 
             <div class="panel-heading">
                 <h3>Cadastro Produto</h3>
@@ -87,8 +124,8 @@ include '../controler/cadClientControler.php';
                         <input id="codigo" name="codigo" type="text" placeholder="Codigo" class="form-control" required value="" maxlength="11">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="descrição">Descrição</label>
-                        <input type="text" name="descrição" id="descrição" placeholder="Descrição do produto" class="form-control" required value="" maxlength="150">
+                        <label for="descricao">Descrição</label>
+                        <input type="text" name="descricao" id="descricao" placeholder="Descrição do produto" class="form-control" required value="" maxlength="150">
                     </div>
                 </div>
 
@@ -131,9 +168,9 @@ include '../controler/cadClientControler.php';
                         <select id="fornecedor" class="form-control" name="fornecedor" placeholder="Fornecedor">
                             <option>Default</option>
                             <?php
-                            $result = listarClientes();
-                            foreach ($result as $pessoa) {
-                                echo "<option id=" . $pessoa["id_cliente"] . " name =" . $pessoa["id_cliente"] . ">" . $pessoa["nm_cliente"] . "</option>";
+                            $result = listarFornecedor();
+                            foreach ($result as $fornecedor) {
+                                echo "<option id = 'idFornecedor'  name = 'idFornecedor'>" . $fornecedor["id_fornecedor"] . " - " . $fornecedor["nm_fornecedor"] . "</option>";
                             };
                             ?>
                         </select>
@@ -141,7 +178,7 @@ include '../controler/cadClientControler.php';
                     </div>
                 </div>
 
-               <!-- <p>
+                <!-- <p>
                     <h4> INFORMAÇÕES DE ESTOQUE</h4>
                 </p>
 
@@ -166,16 +203,17 @@ include '../controler/cadClientControler.php';
                         <input type="text" name="idFabricante" id="idFabricante" placeholder="Informar código do fornecedor" class="form-control" required value="" maxlength="40">
                     </div>
                 </div>
+                F-->
 
                 <div class="form-group">
                     <label class="col-md-2 control-label" for="Cadastrar"></label>
                     <div class="col-md-8">
-                        <button id="btnCadastrar" name="btnCadastrar" class="btn btn-success" type="submit" placeholder="Cadastrar">Cadastrar</button>
+                        <button id="cadastrarProduto" name="cadastrarProduto" class="btn btn-success" type="submit" placeholder="Cadastrar">Cadastrar</button>
                         <button id="Cancelar" name="Cancelar" class="btn btn-danger" type="Reset" placeholder="Cancelar">Cancelar</button>;
                     </div>
                 </div>
 
-                F-->
+                
 
             </div>
         </form>

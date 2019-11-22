@@ -94,7 +94,7 @@
           foreach ($result as $pessoa) {
             $id = $pessoa['id_cliente'];
             echo "<tr>";
-            echo "<td><a href='../controler/deleteCliente.php?id=".$pessoa['id_cliente']."' id='btnCadastrar' name='btnCadastrar' class='btn btn-success'><b>0</b></a><a id='Cancelar' name='Cancelar' class='btn btn-danger' ><b>x</b></a></td>";
+            echo "<td><a href='../controler/deleteCliente.php?id =".$pessoa['id_cliente']."' id='btnCadastrar' name='btnCadastrar' class='btn btn-success'><b>0</b></a><a id='Cancelar' name='Cancelar' class='btn btn-danger' ><b>x</b></a></td>";
             echo "<td>" . $pessoa['id_cliente'] . "</td>";
             echo "<td>" . $pessoa['nm_cliente'] . "</td>";
             echo "<td>" . $pessoa['num_cpf'] . "</td>";
@@ -148,8 +148,6 @@
       </p>
     </footer>
   </div>
-  <button type="submit" type="btnteste2"></button>
-
 </body>
 
 </html>

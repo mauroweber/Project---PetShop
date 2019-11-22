@@ -5,6 +5,8 @@ if (!isset($_SESSION['user_name'])) {
     exit;
 }
 
+require '../controler/produtoDAO.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -14,28 +16,24 @@ if (!isset($_SESSION['user_name'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="lib/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../lib/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="_css/index.css" />
+    <script src="../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
     <link rel="icon" href="../img/dog.png">
-    <style>
-        h1 {
-            color: bisque;
-            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
-        }
-    </style>
 
     <title>Lista de Fornecedores</title>
 </head>
 
+
+<header id="cabecalho">
+    <img class="d-block mx-auto mb-0 " src="../img/dog.png">
+    <h1>Pet Shop</h1>
+    <h5>Seu Pet Shop Favorito</h5>
+</header>
+
 <body>
-    <header id="cabecalho">
-        <img class="d-block mx-auto mb-0 " src="../img/dog.png">
-        <h1>Pet Shop</h1>
-        <h5>Seu Pet Shop Favorito</h5>
-    </header>
     <hr class="mb-4" />
     <nav class="navbar navbar-expand-lg navbar-light bg-light" id="textoNavbar ">
-
         <ul class="navbar-nav justify-content-center">
             <li class="nav-item ">
                 <a class="nav-link" href="home.php ">
@@ -76,35 +74,73 @@ if (!isset($_SESSION['user_name'])) {
 
         </ul>
     </nav>
-
+    <br>
     <p>
         <h1>Lista de Fornecedores</h1>
     </p>
     <br>
     <div class="jumbotron">
-        <table class="table table-striped" id="tbCadastro">
-            <thead id="tbFornecedores">
-                <th>
-                <th>Codigo:</th>
-                <th>CNPJ:</th>
-                <th>Incri Estadual:</th>
-                <th>Nome:</th>
-                <th>Logradouro:</th>
-                <th>N°:</th>
-                <th>Complemento:</th>
-                <th>CEP:</th>
-                <th>Bairro:</th>
-                <th>Municipio:</th>
-                <th>Estado:</th>
-                <th>Telefone:</th>
+        <div class="table-responsive">
+            <table class="table table-striped" id="tbCadastro">
+                <thead id="tbProduto">
+                    <tr>
+                        <th></th>
+                        <th>Nome Produto:</th>
+                        <th>Descrição:</th>
+                        <th>Preço Estadual:</th>
+                        <th>Fornecedor:</th>
+                        <th>Cnpj Fornecedor:</th>
+                        <th>Telefone Contato</th>
 
-                </th>
-            </thead>
-            <tbody>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    $result = listarRelatorioProduto();
+                    foreach ($result as $produto) {
+                        $idProduto = $produto['id_produto'];
+                        echo "<tr>";
+                        echo "<td><a href='../controler/produtoDAO.php?idProduto =". $produto['id_produto'] . "' class='btn btn-danger'><b>0</b></a>" .
+                            "<a id='Cancelar' name='Cancelar' class='btn btn-success' ><b>x</b></a></td>";
+                        echo "<td>" . $produto['nm_produto'] . "</td>";
+                        echo "<td>" . $produto['descricao'] . "</td>";
+                        echo "<td>" . $produto['vl_venda'] . "</td>";
+                        echo "<td>" . $produto['nm_empresa'] . "</td>";
+                        echo "<td>" . $produto['cnpj'] . "</td>";
+                        echo "<td>" . $produto['num_telefone'] . "</td>";
+                        echo "</tr>";
+                    };
 
-            </tbody>
+                    if (isset($_SESSION['msg'])) {
+                        $msg = $_SESSION['msg'];
+                        if ($msg == 0) {
+                            echo "<script language='javascript' type='text/javascript'>
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'error',
+                            title: ' Oops...',
+                            text: 'Erro - 1 : Error ao Deletar do Banco! ',
+                            showConfirmButton: false, 
+                            timer: 2000 
+                        });
+                        </script>";
+                        } elseif ($msg == 1) {
+                            echo "<script language='javascript' type='text/javascript'>
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: 'Removido com Sucesso!',
+                            showConfirmButton: false, 
+                            timer: 2000 });
+                        </script>";
+                        };
+                        unset($_SESSION['msg']);
+                    }
 
-        </table>
+                    ?>
+                </tbody>
+            </table>
+        </div>
     </div>
     <div class="align-content-xl-center">
         <hr class="mb-5 " />
@@ -115,7 +151,6 @@ if (!isset($_SESSION['user_name'])) {
             </p>
         </footer>
     </div>
-
     <script src="js/indexJs.js" type="text/javascript"></script>
 </body>
 
