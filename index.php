@@ -104,14 +104,13 @@
 
 
     <div class="align-content-xl-center">
-        <hr class="mb-5 " />
-        <footer id="rodape ">
-            <p class="mt-5 mb-3 text-muted text-center ">Copyright &copy; 2019 - by David Linhares / Mauro Weber / Whellington<br />
-                <a href="http://google.com " target="_blank ">Facebook</a>
-                <a href="http://google.com " target="_blank ">Twitter</a>
-            </p>
-        </footer>
-
+      <hr class="mb-5 " />
+      <footer id="rodape ">
+        <p class="mt-5 mb-3 text-muted text-center ">Copyright &copy; 2019 - by David Linhares / Mauro Weber / Whellington <br />
+          <a href="http://google.com " target="_blank "><img src="img/facebook.png" class="navbar-toggler-icon"> Facebook</a>
+          <a href="http://google.com " target="_blank "><img src="img/instragram.png" class="navbar-toggler-icon"> Instagram</a>
+        </p>
+      </footer>
     </div>
     <?php
 

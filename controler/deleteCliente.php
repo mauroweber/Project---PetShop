@@ -4,7 +4,7 @@
     $coon = getConnection();
     $sql = "DELETE FROM tb_clientes WHERE id_cliente = :id";
     $stmt = $coon->prepare($sql);
-    $stmt->bindParam(":id", $id);
+    $stmt->bindParam(":id", intval($id));
     if($stmt->execute()){
         $msg =0;
     }else{

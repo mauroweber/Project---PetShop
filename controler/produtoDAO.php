@@ -27,9 +27,6 @@
         $mg_lucro           = floatval($_POST['mgLucro']);
         $cod_produto        = intval($_POST['codigo']);
         $id_fornecedor_fk   = getNumeros($_POST['fornecedor']);
-        echo("<pre>");
-        var_dump($_POST);
-        echo("</pre>");
         $descricao          = $_POST['descricao'];
         $nm_produto         = $_POST['nomeDoProduto'];
         $cod_barras         = $_POST['codBarras'];

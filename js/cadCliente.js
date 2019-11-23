@@ -74,7 +74,6 @@ btnCadastrar.addEventListener('click', (event) => {
     //PEGANDO OS INPUTS E VERICIDANDO SE ESTÃO REQUERIDOS
     // E DA UM ALERT NA PAGINA
     // DA PARA MELHORAR DEPOIS VOU REFATORAR ESTE CODIGO
-    debugger
     if (form.inputCep.value == "" || form.inputTel2.value == "" || form.inputRua.value == "" || form.inputBairro.value == "" ||
         form.inputNum.value == "" || form.inputCidade.value == "" || form.inputEstado.value == "") {
         event.stopImmediatePropagation();

@@ -25,6 +25,14 @@ if (!isset($_SESSION['user_name'])) {
 <body>
         <div class="container">
                 <header id="cabecalho">
+                        <div class="navbar navbar-light">
+                                <a class="navbar-brand"></a>
+                                <div class="form-inline">
+                                        <a class="btn btn-outline-light my-2 " href="../controler/logout.php">sair</a>
+                                </div>
+                        </div>
+
+
                         <img class="d-block mx-auto mb-2 " src="../img/dog.png">
                         <h1>Pet Shop</h1>
                         <h5>Seu Pet Shop Favorito</h5>
@@ -60,42 +68,17 @@ if (!isset($_SESSION['user_name'])) {
                                 </li>
                                 <li class="nav-item ">
                                         <a class="nav-link" href="listFornecedor.php ">
-                                                <h6>Fornecedores</6>
+                                                <h6>Fornecedores</h6>
                                         </a>
                                 </li>
                                 <li class="nav-item ">
                                         <a class="nav-link" href="listProdutos.php ">
-                                                <h6>Produtos</6>
+                                                <h6>Produtos</h6>
                                         </a>
                                 </li>
                         </ul>
                 </nav>
-                <?php
-                if (isset($_SESSION['msg'])) {
-                        $msg = $_SESSION['msg'];
-                        if ($msg == 0) {
-                                echo "<script language='javascript' type='text/javascript'>
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        text: 'Cep Invalido',
-                    });
-                </script>";
-                        } elseif ($msg == 1) {
-                                echo "<script language='javascript' type='text/javascript'>
-                    Swal.fire({
-                        position: 'top-end',
-                        icon: 'success',
-                        title: 'Casdtro Salvo com Sucesso',
-                        showConfirmButton: false, 
-                        timer: 2000 });
-                </script>";
-                        };
-                        unset($_SESSION['msg']);
-                };
 
-                ?>
-                <br>
 
                 <form id="formInput" method="" action="">
                         <div class="panel-heading">

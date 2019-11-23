@@ -1,8 +1,6 @@
 <?php
     require "../conexao.php";
-   
-
-    /*(A VARIAVEL _POST NÃO EXISTE) OU  ( ELA ESTA VAZIA)*/
+   /*(A VARIAVEL _POST NÃO EXISTE) OU  ( ELA ESTA VAZIA)*/
     if(isset($_POST['cadastrarFornecedor']) || !empty($_POST)) {
         $msg = insertFornecedor();
         session_start();
@@ -66,7 +64,7 @@
         $stmt->bindParam(':nm_bairro', $bairro, PDO::PARAM_STR);
         $stmt->bindParam(':num_cep', $cep, PDO::PARAM_STR);
         $stmt->bindParam(':cnpj', $cnpj, PDO::PARAM_STR);
-        if($stmt->execute()){
+        if(!$stmt->execute()){
             $msg = 1;
         }else{
             $msg = 2;
@@ -145,7 +143,7 @@
         $stmt->bindParam(':num_cep', $cep, PDO::PARAM_STR);
         $stmt->bindParam(':cnpj', $cnpj, PDO::PARAM_STR);
 
-        if($stmt->execute()){
+        if(!$stmt->execute()){
             $msg = 1;
         }else{
             $msg = 2;
@@ -160,7 +158,7 @@
         $sql = "DELETE FROM tb_fornecedor WHERE id_fornecedor = :idFornecedor";
         $stmt = $coon->prepare($sql);
         $stmt->bindParam(":idFornecedor", $idFornecedor);
-        if($stmt->execute()){
+        if(!$stmt->execute()){
             $msg =0;
         }else{
             $msg = 1;
@@ -168,5 +166,3 @@
         return $msg;
         $coon = null;
     };
-
-?>
