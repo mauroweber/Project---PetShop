@@ -1,6 +1,5 @@
 <?php 
     session_start();
-
     if(isset($_SESSION['user_name'])){
         header("Location: view/home.php");
         exit;
@@ -22,67 +21,58 @@
     <link rel="stylesheet " type="text/css " href="lib/bootstrap.min.css" />
     <link rel="stylesheet " type="text/css " href="lib/bootstrap-grid.min.css" />
     <link rel="stylesheet " type="text/css " href="_css/index.css" />
+    <link rel="Stylesheet " type="text/css " href="estiloLogin.css" />
     <script src="node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
 
 </head>
 
 <body>
-    <div class="container">
-
-        <header id="cabecalho">
-            <img class="d-block mx-auto mb-2 " src="img/dog.png">
-            <h1>Pet Shop</h1>
-            <h5>Seu Pet Shop Favorito</h5>
-        </header>
-        <hr class="mb-auto" />
-
-        <div class="d-flex justify-content-center h-75">
-            <div class="card">
-                <div class="card-header">
-                    <h3>Login</h3>
-                </div>
-                <div class="card-body">
-                    <form method="POST" action="controler/login.php">
-                        <div class="input-group form-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+<div class="form_container">
+                <div class="d-flex justify-content-center h-100">
+                    <div class="user_card">
+                        <div class="d-flex justify-content-center">
+                            <div class="brand_logo_container">
+                                <img src="img/dog.png" class="brand_logo" alt="Logo">
                             </div>
-                            <input type="text" class="form-control" placeholder="Usuário" id="usuario" name="usuario"> 
-
                         </div>
-                        <div class="input-group form-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                        <div class="d-flex justify-content-center form_container">
+                            <form>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                    </div>
+                                    <input type="text" name="" class="form-control input_user" value="" placeholder="Usuario">
+                                </div>
+                                <div class="input-group mb-2">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                    </div>
+                                    <input type="password" name="" class="form-control input_pass" value="" placeholder="Senha">
+                                </div>
+                                <div class="form-group">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customControlInline">
+                                        <label class="custom-control-label" for="customControlInline">Lembrar Senha</label>
+                                    </div>
+                                </div>
+                                    <div class="d-flex justify-content-center mt-3 login_container">
+                             <a href="index.php"> <button type="button" name="button" class="btn login_btn">Login</button></a>
+                             
+                           </div>
+                            </form>
+                        </div>
+                
+                        <div class="mt-4">
+                            <div class="d-flex justify-content-center links" >
+                                 <a href="#" class="ml-2">Cadastrar novo usuario</a>
                             </div>
-                            <input type="password" name="senha" id="senha" class="form-control" placeholder="Senha" maxlength="10">
+                            <div class="d-flex justify-content-center links">
+                                <a href="#">Esqueceu sua senha?</a>
+                            </div>
                         </div>
-                        <!-- <div class="row align-items-center remember">
-                            <input type="checkbox">Lembre Me
-                        </div> -->
-                        <div class="form-group">
-                            <input type="submit" onclick="Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: 'Your work has been saved',
-            showConfirmButton: false,
-            timer: 1500
-          })" name="btnLogar" id= "btnLogar" value="Entrar" class="btn float-right login_btn">
-                        </div>
-                    </form>
-                </div>
-                <div class="card-footer">
-                    <div class="d-flex justify-content-center links">
-                        Você não tem uma Conta ?<a href="#">Cadastre aqui </a>
-                    </div>
-                    <div class="d-flex justify-content-center">
-                        <a href="#" style="text-align: right">Esqueceu a senha?</a>
                     </div>
                 </div>
             </div>
-        </div>
-
-
-    </div>
 
 
 

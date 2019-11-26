@@ -1,0 +1,78 @@
+body,
+		html {
+            
+			height: 100%;
+            background-image: url("img/fundo3.jpg");
+            background-size: 100%;
+            overflow: auto;
+            background-position: center;
+            background-repeat: no-repeat;
+                                  
+		}
+		.user_card {
+			height: 500px;
+			width: 350px;
+			margin-top: auto;
+			margin-bottom: auto;
+			background: transparent;
+			position: relative;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			padding: 10px;
+		
+		}
+		.brand_logo_container {
+			position: absolute;
+			height: 170px;
+			width: 170px;
+			top: -75px;
+			border-radius: 50%;
+			background: orange;
+			padding: 10px;
+            text-align: center;
+            
+            
+		}
+		.brand_logo {
+			height: 150px;
+			width: 150px;
+			border-radius: 70%;
+            border: 3px solid white;
+            
+        }
+        
+		.form_container {
+			margin-top: 100px;
+		}
+		.login_btn {
+			width: 100%;
+			background: orange !important;
+			color: white !important;
+		}
+		.login_btn:focus {
+			box-shadow: none !important;
+			outline: 0px !important;
+		}
+		.login_container {
+			padding: 0 2rem;
+		}
+		.input-group-text {
+			background: orange !important;
+			color: white !important;
+			border: 0 !important;
+			border-radius: 0.25rem 0 0 0.25rem !important;
+		}
+		.input_user,
+		.input_pass:focus {
+			box-shadow: none !important;
+			outline: 0px !important;
+		}
+		.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+			background-color: orange !important;
+        }
+        
+        .custom-control-label{
+            color: white;
+        }
+    

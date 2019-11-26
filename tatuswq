@@ -1,0 +1,151 @@
+[33mcommit bdbfa6ece3ea2d8ee394414ce19a3be5ed4c55df[m[33m ([m[1;36mHEAD -> [m[1;32mwel[m[33m)[m
+Merge: 54b1fc3 ff07941
+Author: Weellington Ferreira <welpollferreira@gmail.com>
+Date:   Thu Nov 7 23:38:15 2019 -0300
+
+    Merge branch 'master' of https://github.com/mauroweber/Project---PetShop into wel
+
+[33mcommit 54b1fc3a5769153ddcca37944c31f0209e982cda[m
+Author: Weellington Ferreira <welpollferreira@gmail.com>
+Date:   Thu Nov 7 23:24:22 2019 -0300
+
+    css implementado
+
+[33mcommit ff07941e6d2282ee322e090f5f062474c304beb0[m[33m ([m[1;31morigin/mw[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;31morigin/DavidLinhares[m[33m)[m
+Merge: 4f36371 dd6a05b
+Author: David Linhares <david.linhares@hotmail.com.br>
+Date:   Tue Oct 29 00:23:42 2019 -0300
+
+    Merge remote-tracking branch 'origin/mw'
+
+[33mcommit 4f36371d639b49490971c159c305d542d2a99899[m
+Merge: 869710e 2346d5a
+Author: David Linhares <david.linhares@hotmail.com.br>
+Date:   Mon Oct 28 23:56:48 2019 -0300
+
+    Merge branch 'master' of https://github.com/mauroweber/Project---PetShop into DavidLinhares
+
+[33mcommit dd6a05bf8172eb995a5745bfa67b0e9cee588728[m
+Merge: ae62865 2346d5a
+Author: David Linhares <david.linhares@hotmail.com.br>
+Date:   Mon Oct 28 23:52:14 2019 -0300
+
+    Merge branch 'master' of https://github.com/mauroweber/Project---PetShop into mw
+
+[33mcommit 2346d5ac3e0341ed5d2d1d937db2d247b0faf010[m
+Author: David Linhares <david.linhares@hotmail.com.br>
+Date:   Mon Oct 28 23:51:01 2019 -0300
+
+    Atualizando
+
+[33mcommit ae628658898eddc31c31f74d9fb297d5f2bc2d00[m
+Merge: 869710e dfa11c4
+Author: David Linhares <david.linhares@hotmail.com.br>
+Date:   Mon Oct 28 23:05:28 2019 -0300
+
+    Merge branch 'master' into mw
+
+[33mcommit dfa11c42533223b9e5c21e633f1f4c76587b9129[m
+Merge: b8b6bcc 869710e
+Author: David Linhares <david.linhares@hotmail.com.br>
+Date:   Mon Oct 28 23:05:16 2019 -0300
+
+    Merge branch 'mw'
+
+[33mcommit deae1c664cba424fde1d0673e267204dd9aaa0fb[m
+Merge: 869710e b461309
+Author: David Linhares <david.linhares@hotmail.com.br>
+Date:   Sat Oct 19 19:45:12 2019 -0300
+
+    Merge remote-tracking branch 'origin/master'
+
+[33mcommit b461309744721ed7396c47643889a4be83562c9f[m
+Merge: a174b15 7add037
+Author: David Linhares <david.linhares@hotmail.com.br>
+Date:   Sat Oct 19 19:43:29 2019 -0300
+
+    Merge remote-tracking branch 'origin/master' into DavidLinhares
+
+[33mcommit 869710e9e88e2bd85c9e3c9eee4a10c63e128a12[m
+Merge: b8b6bcc 7add037
+Author: David Linhares <david.linhares@hotmail.com.br>
+Date:   Sat Oct 19 19:33:35 2019 -0300
+
+    Merge remote-tracking branch 'origin/master'
+
+[33mcommit b8b6bcc5d3dd5f43ef20484b56954ba0cdb7c692[m
+Merge: bb7f75d a174b15
+Author: David Linhares <david.linhares@hotmail.com.br>
+Date:   Sat Oct 19 19:31:17 2019 -0300
+
+    Merge branch 'DavidLinhares'
+
+[33mcommit a174b153dd7905e56f848e32536c3dbb072b4bc1[m
+Author: David Linhares <david.linhares@hotmail.com.br>
+Date:   Sat Oct 19 19:24:07 2019 -0300
+
+    Alterações nos Nomes dos Arquivos
+
+[33mcommit bb7f75d9205a951972a33d2688b5d3b762f3cae7[m
+Merge: f099ac9 0d24927
+Author: David Linhares <david.linhares@hotmail.com.br>
+Date:   Sat Oct 19 19:08:00 2019 -0300
+
+    Merge remote-tracking branch 'origin/mw'
+    
+    Pegando Alterações de Mauro
+
+[33mcommit 7add03709e20ae247ee322e8b35a301ee22a3382[m
+Merge: f099ac9 0d24927
+Author: David Linhares <david.linhares@hotmail.com.br>
+Date:   Sat Oct 19 19:08:00 2019 -0300
+
+    Merge remote-tracking branch 'origin/mw'
+
+[33mcommit f099ac9b534ac4dd9e571c3065c93ab0cd04542d[m
+Author: David Linhares <david.linhares@hotmail.com.br>
+Date:   Fri Oct 18 05:47:15 2019 -0300
+
+    Validacao e Mascaras
+
+[33mcommit 0d249272ab8a60ad01b654ae532ac3c835801e6b[m
+Author: mauroweber <mauro.weber@live.com>
+Date:   Thu Oct 17 16:41:15 2019 -0300
+
+    telas terminadas
+
+[33mcommit 4898935233caf8b794761456e80863cd61f898be[m
+Author: mauroweber <mauro.weber@live.com>
+Date:   Thu Oct 17 10:55:19 2019 -0300
+
+    Iniciando Produto
+
+[33mcommit 483ef3f17335733c56daf69966ccd51c51fab314[m
+Author: David Linhares <david.linhares@hotmail.com.br>
+Date:   Tue Oct 15 21:40:54 2019 -0300
+
+    Atualização
+
+[33mcommit bd840b54e8c90ea91d2ae73beebf373e7538f1e2[m
+Author: mauroweber <mauro.weber@live.com>
+Date:   Tue Oct 15 16:40:22 2019 -0300
+
+    Incluido cadastro de fornecedor
+
+[33mcommit 8d3c8978c3121660e9e24e9a958da66b02f1bcca[m
+Author: David Linhares <david.linhares@hotmail.com.br>
+Date:   Wed Oct 9 04:58:05 2019 -0300
+
+     Versão 0.2
+
+[33mcommit af72b584dc43f62b8b2094b38271b40e349cf0a8[m
+Author: David Linhares <david.linhares@hotmail.com.br>
+Date:   Tue Oct 8 05:02:51 2019 -0300
+
+    Andamento
+
+[33mcommit 30fbdc90c7bc9a576115518e31f7c3f3033796b1[m
+Author: Weber <49005404+mauroweber@users.noreply.github.com>
+Date:   Wed Sep 4 10:26:10 2019 -0300
+
+    Initial commit

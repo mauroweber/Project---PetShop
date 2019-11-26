@@ -4,7 +4,7 @@
     function getConnection(){ 
         $local = 'mysql:host=localhost;dbname=pet_shop_db';
         $user = "root";
-        $password = "123456";
+        $password = "";
         try{
             $connPdo = new pdo($local, $user , $password);
             $connPdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
