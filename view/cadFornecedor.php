@@ -126,7 +126,7 @@ if (!isset($_SESSION['user_name'])) {
             </div>
             <div class="form-group col-md-6">
               <label class=" control-label" for="inputcnpj">CNPJ</label>
-              <input id="inputcnpj" name="inputcnpj" placeholder="CNPJ" class="form-control" required value="" maxlength="40">
+              <input id="inputcnpj" name="inputcnpj" placeholder="CNPJ" class="form-control" required value="" maxlength="18">
             </div>
           </div>
           <div class="form-row">
@@ -166,7 +166,7 @@ if (!isset($_SESSION['user_name'])) {
             </div>
             <div class="form-group col-md-6">
               <label class=" control-label" for="inputCEP">CEP</label>
-              <input id="inputCEP" name="inputCEP" placeholder="Ex.: 00000-000" class="form-control" required type="text" maxlength="40">
+              <input id="inputCEP" name="inputCEP" placeholder="Ex.: 00000-000" class="form-control" required type="text" maxlength="9">
             </div>
           </div>
           <div class="form-row">
@@ -238,7 +238,7 @@ if (!isset($_SESSION['user_name'])) {
       </footer>
     </div>
   </div>
-  <script type="text/javascript" src="../js/cadFornecedor.js"></script>
+<script src="../js/cadFornecedor.js"></script>
 </body>
 
 </html>
